@@ -1,0 +1,3950 @@
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			int v;
+Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 2
+		ExecutionStack:
+			wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 1
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 1
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 2
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+30
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 3
+		ExecutionStack:
+			int v;
+Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 3
+		ExecutionStack:
+			Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 3
+		ExecutionStack:
+			Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 3
+		ExecutionStack:
+			v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 3
+		ExecutionStack:
+			v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 3
+		ExecutionStack:
+			new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 3
+		ExecutionStack:
+			new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 3
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+======== New step ========
+
+	 ThreadID: 3
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 3
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+======== New step ========
+
+	 ThreadID: 3
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 4
+		ExecutionStack:
+			wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 4
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 4
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 5
+		ExecutionStack:
+			wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 4
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 5
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 4
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 5
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 4
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 5
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 3
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 4
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 5
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 4
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 5
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 4
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 5
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 4
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 5
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+30
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			int v;
+Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 2
+		ExecutionStack:
+			wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 1
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 1
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 2
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+30
+32
+30
+32
+30
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			int v;
+Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 2
+		ExecutionStack:
+			wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 1
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 1
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+30
+32
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 2
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+30
+32
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+30
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+30
+32
+30
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			int v;
+Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			Ref(int) a;
+v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			v = 10;
+new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 0
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			new(a, 22);
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x0, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			fork
+(
+wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+)
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 2
+		ExecutionStack:
+			wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 22
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			wH(a) = 30;
+v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			1 -> 30
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			v = 32;
+print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 1
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (v);
+print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 1
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 10
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+32
+30
+
+		Heap:
+			1 -> 30
+
+======== New step ========
+
+	 ThreadID: 2
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			print (rH(a));
+
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+32
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 2
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+32
+30
+30
+
+		Heap:
+			1 -> 30
+
+	 ThreadID: 3
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> (0x1, int)
+v -> 32
+
+		FileTable:
+			
+		OutputTable:
+			10
+32
+30
+32
+30
+30
+
+		Heap:
+			1 -> 30

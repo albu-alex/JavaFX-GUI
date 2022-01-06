@@ -1,0 +1,251 @@
+
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			openRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+int a;
+readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+closeRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+
+		SymbolTable:
+			
+		FileTable:
+			
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			int a;
+readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+closeRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+
+		SymbolTable:
+			
+		FileTable:
+			D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in -> java.io.BufferedReader@72cbe65a
+
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			int a;
+readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+closeRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+
+		SymbolTable:
+			
+		FileTable:
+			D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in -> java.io.BufferedReader@72cbe65a
+
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+closeRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+
+		SymbolTable:
+			a -> 0
+
+		FileTable:
+			D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in -> java.io.BufferedReader@72cbe65a
+
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+closeRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+
+		SymbolTable:
+			a -> 0
+
+		FileTable:
+			D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in -> java.io.BufferedReader@72cbe65a
+
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			print (a);
+readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+closeRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+
+		SymbolTable:
+			a -> 0
+
+		FileTable:
+			D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in -> java.io.BufferedReader@72cbe65a
+
+		OutputTable:
+			
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (a);
+readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+closeRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+
+		SymbolTable:
+			a -> 0
+
+		FileTable:
+			D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in -> java.io.BufferedReader@72cbe65a
+
+		OutputTable:
+			
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+closeRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+
+		SymbolTable:
+			a -> 0
+
+		FileTable:
+			D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in -> java.io.BufferedReader@72cbe65a
+
+		OutputTable:
+			0
+
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			readFile(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+print (a);
+closeRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+
+		SymbolTable:
+			a -> 0
+
+		FileTable:
+			D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in -> java.io.BufferedReader@72cbe65a
+
+		OutputTable:
+			0
+
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			print (a);
+closeRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+
+		SymbolTable:
+			a -> 0
+
+		FileTable:
+			D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in -> java.io.BufferedReader@72cbe65a
+
+		OutputTable:
+			0
+
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			print (a);
+closeRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+
+		SymbolTable:
+			a -> 0
+
+		FileTable:
+			D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in -> java.io.BufferedReader@72cbe65a
+
+		OutputTable:
+			0
+
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			closeRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+
+		SymbolTable:
+			a -> 0
+
+		FileTable:
+			D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in -> java.io.BufferedReader@72cbe65a
+
+		OutputTable:
+			0
+0
+
+		Heap:
+			
+======== New step ========
+
+	 ThreadID: 1
+		ExecutionStack:
+			closeRead(D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in);
+
+		SymbolTable:
+			a -> 0
+
+		FileTable:
+			D:\Cursuri\MAP_Projects\fourth_homework\interpreter\src\example4.in -> java.io.BufferedReader@72cbe65a
+
+		OutputTable:
+			0
+0
+
+		Heap:
+			
+	 ThreadID: 1
+		ExecutionStack:
+			
+		SymbolTable:
+			a -> 0
+
+		FileTable:
+			
+		OutputTable:
+			0
+0
+
+		Heap:
+			

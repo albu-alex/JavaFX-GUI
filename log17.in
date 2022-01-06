@@ -1,0 +1,4418 @@
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+int v;
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 4========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 4========
+ExecutionStack:
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+0
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int v;
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+0
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int v;
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+0
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+int v;
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 4========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 4========
+ExecutionStack:
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+0
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 5========
+ExecutionStack:
+int v;
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 5========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 5========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 5========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 5========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 5========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 5========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 6========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 5========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 6========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 5========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 5========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 5========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 7========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 5========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 7========
+ExecutionStack:
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 5========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 5========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 5========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 5========
+ExecutionStack:
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+0
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int v;
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+0
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+int v;
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 4========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 4========
+ExecutionStack:
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+0
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int v;
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+0
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int v;
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+0
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int v;
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+0
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int v;
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int v;
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+for (v = 2; v > 0; v = v - 1) {
+	fork
+(
+print (v + 23);
+)
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = v - 1;
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+print (v + 23);
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	fork
+(
+print (v + 23);
+)
+v = v - 1;
+}
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+25
+24
+0
+
+Heap:

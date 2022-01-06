@@ -1,0 +1,40 @@
+.button {
+	-fx-font-family: 'sans-serif';
+	-fx-font-size: 16;
+	-fx-background-radius: 5em;
+}
+
+.combo-box {
+	-fx-background-radius: 5em;
+	-fx-border-radius: 5em;
+	-fx-padding: 10 0 10 10;
+	-fx-background-color: ghostwhite;
+	-fx-border-color: #111111;
+}
+
+#upperLayout {
+	-fx-font-family: 'sans-serif';
+	-fx-font-size: 16;
+	
+	-fx-padding: 20 15 5 15; /*top right bottom left*/
+	-fx-background-color: #AAAAAA;
+}
+
+#executeAreaLayout {
+	-fx-spacing: 15;
+	-fx-padding: 20 15 5 15;
+	-fx-background-color: #AAAAAA;
+}
+
+#threadCountTextField {
+	-fx-font-family: 'sans-serif';
+	-fx-font-size: 16;
+}
+
+#mainStructuresLayout {
+	-fx-padding: 5 15 20 15;
+	-fx-font-size: 14;
+	-fx-font-weight: bold;
+	-fx-font-family: 'sans-serif';
+	-fx-background-color: #AAAAAA;
+}
