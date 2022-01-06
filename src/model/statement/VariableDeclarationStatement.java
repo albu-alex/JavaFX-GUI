@@ -40,8 +40,6 @@ public class VariableDeclarationStatement implements Statement {
 		else if (this.variableType instanceof ReferenceType) {
 			symbolTable.insert(this.variableName, this.variableType.getDefaultValue());
 		}
-		// I'm not sure if this part will ever be reached, because the compiler doesn't allow for anything but a Type
-		// to be added, but just in case...
 		else {
 			throw new InvalidTypeException("VariableDeclarationStatement: Invalid type when trying to declare " + this.variableName);
 		}

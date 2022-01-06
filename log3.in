@@ -456,3 +456,232 @@ OutputTable:
 2
 
 Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+bool a;
+int v;
+a = true;
+if (a) {
+	v = 2;
+}
+else {
+	v = 3;
+}
+print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+int v;
+a = true;
+if (a) {
+	v = 2;
+}
+else {
+	v = 3;
+}
+print (v);
+
+SymbolTable:
+a -> false
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int v;
+a = true;
+if (a) {
+	v = 2;
+}
+else {
+	v = 3;
+}
+print (v);
+
+SymbolTable:
+a -> false
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+a = true;
+if (a) {
+	v = 2;
+}
+else {
+	v = 3;
+}
+print (v);
+
+SymbolTable:
+a -> false
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+a = true;
+if (a) {
+	v = 2;
+}
+else {
+	v = 3;
+}
+print (v);
+
+SymbolTable:
+a -> false
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+if (a) {
+	v = 2;
+}
+else {
+	v = 3;
+}
+print (v);
+
+SymbolTable:
+a -> true
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+if (a) {
+	v = 2;
+}
+else {
+	v = 3;
+}
+print (v);
+
+SymbolTable:
+a -> true
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = 2;
+print (v);
+
+SymbolTable:
+a -> true
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = 2;
+print (v);
+
+SymbolTable:
+a -> true
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+a -> true
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+a -> true
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+a -> true
+v -> 2
+
+FileTable:
+
+OutputTable:
+2
+
+Heap:

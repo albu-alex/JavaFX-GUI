@@ -484,3 +484,165 @@ OutputTable:
 18
 
 Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int a;
+int b;
+a = 3 * 5 + 2;
+b = a + 1;
+print (b);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+int b;
+a = 3 * 5 + 2;
+b = a + 1;
+print (b);
+
+SymbolTable:
+a -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int b;
+a = 3 * 5 + 2;
+b = a + 1;
+print (b);
+
+SymbolTable:
+a -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+a = 3 * 5 + 2;
+b = a + 1;
+print (b);
+
+SymbolTable:
+a -> 0
+b -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+a = 3 * 5 + 2;
+b = a + 1;
+print (b);
+
+SymbolTable:
+a -> 0
+b -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+b = a + 1;
+print (b);
+
+SymbolTable:
+a -> 17
+b -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+b = a + 1;
+print (b);
+
+SymbolTable:
+a -> 17
+b -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+print (b);
+
+SymbolTable:
+a -> 17
+b -> 18
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (b);
+
+SymbolTable:
+a -> 17
+b -> 18
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+a -> 17
+b -> 18
+
+FileTable:
+
+OutputTable:
+18
+
+Heap:

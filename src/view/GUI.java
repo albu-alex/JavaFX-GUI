@@ -391,14 +391,7 @@ public class GUI extends Application {
 		return upperLayout;
 	}
 	
-	private Scene createSelectExampleScene() {
-		Scene createExampleScene;
-		createExampleScene = new Scene(this.createUpperLayout());
-		createExampleScene.getStylesheets().add(getClass().getResource("applicationStyle.css").toExternalForm());
-		return createExampleScene;
-	}
-	
-	private Scene createMainScene() throws Exception {
+	private Scene createMainScene(){
 		Scene mainScene;
 		VBox mainLayout = new VBox(10);
 		
@@ -411,7 +404,7 @@ public class GUI extends Application {
 	}
 	
 	@Override
-	public void start(Stage primaryStage) throws Exception {
+	public void start(Stage primaryStage){
 		this.controller = new GUIController(this);
 		
 		primaryStage.setMinWidth(this.MINIMUM_MAIN_WINDOW_WIDTH);
