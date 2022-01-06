@@ -4,16 +4,16 @@ import exception.InvalidOperatorException;
 import exception.InvalidTypeException;
 import model.ADT.DictionaryInterface;
 import model.type.BoolType;
-import model.type.TypeInterface;
+import model.type.Type;
 import model.value.BoolValue;
 import model.value.ValueInterface;
 
-public class LogicalExpression implements ExpressionInterface{
-	private final ExpressionInterface firstExp;
-	private final ExpressionInterface secondExp;
+public class LogicalExpression implements Expression {
+	private final Expression firstExp;
+	private final Expression secondExp;
 	private final String operator;
 	
-	public LogicalExpression(ExpressionInterface firstExp, ExpressionInterface secondExp, String operator){
+	public LogicalExpression(Expression firstExp, Expression secondExp, String operator){
 		this.firstExp = firstExp;
 		this.secondExp = secondExp;
 		this.operator = operator;
@@ -49,8 +49,8 @@ public class LogicalExpression implements ExpressionInterface{
 	}
 
 	@Override
-	public TypeInterface typeCheck(DictionaryInterface<String, TypeInterface> typeEnvironment) throws Exception {
-		TypeInterface firstType, secondType, boolType;
+	public Type typeCheck(DictionaryInterface<String, Type> typeEnvironment) throws Exception {
+		Type firstType, secondType, boolType;
 		firstType = this.firstExp.typeCheck(typeEnvironment);
 		secondType = this.secondExp.typeCheck(typeEnvironment);
 		boolType = new BoolType();

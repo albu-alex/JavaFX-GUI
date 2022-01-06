@@ -2,10 +2,10 @@ package model.expression;
 
 import exception.UndefinedVariableException;
 import model.ADT.DictionaryInterface;
-import model.type.TypeInterface;
+import model.type.Type;
 import model.value.ValueInterface;
 
-public class VariableExpression implements ExpressionInterface{
+public class VariableExpression implements Expression {
 	private final String variableName;
 	
 	public VariableExpression(String variableName) {
@@ -28,7 +28,7 @@ public class VariableExpression implements ExpressionInterface{
 	}
 
 	@Override
-	public TypeInterface typeCheck(DictionaryInterface<String, TypeInterface> typeEnvironment) throws Exception {
+	public Type typeCheck(DictionaryInterface<String, Type> typeEnvironment) throws Exception {
 		return typeEnvironment.getValue(this.variableName);
 	}
 }

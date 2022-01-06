@@ -3,10 +3,10 @@ package model.type;
 import model.value.ReferenceValue;
 import model.value.ValueInterface;
 
-public class ReferenceType implements TypeInterface{
-	private final TypeInterface innerType;
+public class ReferenceType implements Type {
+	private final Type innerType;
 	
-	public ReferenceType(TypeInterface innerType) {
+	public ReferenceType(Type innerType) {
 		this.innerType = innerType;
 	}
 	
@@ -24,7 +24,7 @@ public class ReferenceType implements TypeInterface{
 		return new ReferenceValue(this.innerType);
 	}
 	
-	public TypeInterface getInnerType() {
+	public Type getInnerType() {
 		return this.innerType;
 	}
 	

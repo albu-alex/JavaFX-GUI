@@ -4,14 +4,14 @@ import exception.InvalidTypeException;
 import exception.UndefinedVariableException;
 import model.ADT.DictionaryInterface;
 import model.type.ReferenceType;
-import model.type.TypeInterface;
+import model.type.Type;
 import model.value.ReferenceValue;
 import model.value.ValueInterface;
 
-public class HeapReadingExpression implements ExpressionInterface{
-	private final ExpressionInterface expression;
+public class HeapReadingExpression implements Expression {
+	private final Expression expression;
 	
-	public HeapReadingExpression(ExpressionInterface expression) {
+	public HeapReadingExpression(Expression expression) {
 		this.expression = expression;
 	}
 	
@@ -34,8 +34,8 @@ public class HeapReadingExpression implements ExpressionInterface{
 	}
 
 	@Override
-	public TypeInterface typeCheck(DictionaryInterface<String, TypeInterface> typeEnvironment) throws Exception {
-		TypeInterface expressionType = this.expression.typeCheck(typeEnvironment);
+	public Type typeCheck(DictionaryInterface<String, Type> typeEnvironment) throws Exception {
+		Type expressionType = this.expression.typeCheck(typeEnvironment);
 		if (expressionType instanceof ReferenceType == false) {
 			throw new InvalidTypeException("HeapReadingExpression: Expression is not a reference");
 		}

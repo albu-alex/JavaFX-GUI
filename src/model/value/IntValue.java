@@ -1,7 +1,7 @@
 package model.value;
 
 import model.type.IntType;
-import model.type.TypeInterface;
+import model.type.Type;
 
 public class IntValue implements ValueInterface{
 	private final int value;
@@ -31,7 +31,7 @@ public class IntValue implements ValueInterface{
 	}
 	
 	@Override
-	public TypeInterface getType() {
+	public Type getType() {
 		return new IntType();
 	}
 }

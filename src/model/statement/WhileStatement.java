@@ -4,24 +4,24 @@ import exception.InvalidTypeException;
 import model.ProgramState;
 import model.ADT.DictionaryInterface;
 import model.ADT.StackInterface;
-import model.expression.ExpressionInterface;
+import model.expression.Expression;
 import model.type.BoolType;
-import model.type.TypeInterface;
+import model.type.Type;
 import model.value.BoolValue;
 import model.value.ValueInterface;
 
-public class WhileStatement implements StatementInterface {
-	private final ExpressionInterface conditionalExpression;
-	private final StatementInterface statement;
+public class WhileStatement implements Statement {
+	private final Expression conditionalExpression;
+	private final Statement statement;
 	private final boolean expectedLogicalValue; // this is used so that we can have conditions like 'while (x == false)'
 	
-	public WhileStatement(ExpressionInterface conditionalExpression, StatementInterface statement) {
+	public WhileStatement(Expression conditionalExpression, Statement statement) {
 		this.conditionalExpression = conditionalExpression;
 		this.statement = statement;
 		this.expectedLogicalValue = true;
 	}
 	
-	public WhileStatement(ExpressionInterface conditionalExpression, StatementInterface statement, boolean expectedLogicalValue) {
+	public WhileStatement(Expression conditionalExpression, Statement statement, boolean expectedLogicalValue) {
 		this.conditionalExpression = conditionalExpression;
 		this.statement = statement;
 		this.expectedLogicalValue = expectedLogicalValue;
@@ -29,7 +29,7 @@ public class WhileStatement implements StatementInterface {
 	
 	@Override
 	public ProgramState execute(ProgramState crtState) throws Exception {
-		StackInterface<StatementInterface> stack = crtState.getExecutionStack();
+		StackInterface<Statement> stack = crtState.getExecutionStack();
 		DictionaryInterface<String, ValueInterface> symbolTable = crtState.getSymbolTable();
 		DictionaryInterface<Integer, ValueInterface> heap = crtState.getHeap();
 		
@@ -55,8 +55,8 @@ public class WhileStatement implements StatementInterface {
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
 		if (this.conditionalExpression.typeCheck(initialTypeEnvironment).equals(new BoolType()) == false) {
 			throw new InvalidTypeException("WhileStatement: Conditional expression is not boolean");
 		}

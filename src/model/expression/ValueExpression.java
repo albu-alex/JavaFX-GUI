@@ -1,10 +1,10 @@
 package model.expression;
 
 import model.ADT.DictionaryInterface;
-import model.type.TypeInterface;
+import model.type.Type;
 import model.value.ValueInterface;
 
-public class ValueExpression implements ExpressionInterface {
+public class ValueExpression implements Expression {
 	private final ValueInterface value;
 	
 	public ValueExpression(ValueInterface value) {
@@ -24,7 +24,7 @@ public class ValueExpression implements ExpressionInterface {
 	}
 
 	@Override
-	public TypeInterface typeCheck(DictionaryInterface<String, TypeInterface> typeEnvironment) throws Exception {
+	public Type typeCheck(DictionaryInterface<String, Type> typeEnvironment) throws Exception {
 		return this.value.getType();
 	}
 }

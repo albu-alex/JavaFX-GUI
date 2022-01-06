@@ -1,7 +1,7 @@
 package model.value;
 
 import model.type.BoolType;
-import model.type.TypeInterface;
+import model.type.Type;
 
 public class BoolValue implements ValueInterface {
 	private final boolean value;
@@ -31,7 +31,7 @@ public class BoolValue implements ValueInterface {
 	}
 	
 	@Override
-	public TypeInterface getType() {
+	public Type getType() {
 		return new BoolType();
 	}
 }

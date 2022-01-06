@@ -2,18 +2,18 @@ package model.statement;
 
 import model.ProgramState;
 import model.ADT.DictionaryInterface;
-import model.type.TypeInterface;
+import model.type.Type;
 
-public class CompoundStatement implements StatementInterface {
-	private final StatementInterface firstStatement;
-	private final StatementInterface secondStatement;
+public class CompoundStatement implements Statement {
+	private final Statement firstStatement;
+	private final Statement secondStatement;
 	
-	public CompoundStatement(StatementInterface firstStatement, StatementInterface secondStatement) {
+	public CompoundStatement(Statement firstStatement, Statement secondStatement) {
 		this.firstStatement = firstStatement;
 		this.secondStatement = secondStatement;
 	}
 	
-	private void processStatement(ProgramState crtState, StatementInterface statement) throws Exception {
+	private void processStatement(ProgramState crtState, Statement statement) throws Exception {
 		if (statement instanceof CompoundStatement) {
 			((CompoundStatement) statement).addStatementsToStack(crtState);
 		}
@@ -42,8 +42,8 @@ public class CompoundStatement implements StatementInterface {
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
 		return this.secondStatement.getTypeEnvironment(this.firstStatement.getTypeEnvironment(initialTypeEnvironment));
 	}
 }

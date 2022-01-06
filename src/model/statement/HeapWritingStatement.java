@@ -4,17 +4,17 @@ import exception.InvalidTypeException;
 import exception.UndefinedVariableException;
 import model.ProgramState;
 import model.ADT.DictionaryInterface;
-import model.expression.ExpressionInterface;
+import model.expression.Expression;
 import model.type.ReferenceType;
-import model.type.TypeInterface;
+import model.type.Type;
 import model.value.ReferenceValue;
 import model.value.ValueInterface;
 
-public class HeapWritingStatement implements StatementInterface {
+public class HeapWritingStatement implements Statement {
 	private final String variableName;
-	private final ExpressionInterface expression;
+	private final Expression expression;
 	
-	public HeapWritingStatement(String variableName, ExpressionInterface expression) {
+	public HeapWritingStatement(String variableName, Expression expression) {
 		this.variableName = variableName;
 		this.expression = expression;
 	}
@@ -47,9 +47,9 @@ public class HeapWritingStatement implements StatementInterface {
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
-		TypeInterface expressionReferenceType = new ReferenceType(this.expression.typeCheck(initialTypeEnvironment));
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
+		Type expressionReferenceType = new ReferenceType(this.expression.typeCheck(initialTypeEnvironment));
 		// the type of the reference that "variableName" is allocated to
 		// if getValue does not return a ReferenceValue, the equals will fail; it will also fail if the inner types don't match
 		// so we're doing both checks simultaneously

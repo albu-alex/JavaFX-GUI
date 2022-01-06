@@ -1,19 +1,19 @@
 package model.value;
 
 import model.type.ReferenceType;
-import model.type.TypeInterface;
+import model.type.Type;
 
 public class ReferenceValue implements ValueInterface{
 	private final int heapAddress;
 	public static final int DEFAULT_HEAP_ADDRESS = 0;
-	private final TypeInterface referencedType;
+	private final Type referencedType;
 	
-	public ReferenceValue(int heapAddress, TypeInterface referencedType) {
+	public ReferenceValue(int heapAddress, Type referencedType) {
 		this.heapAddress = heapAddress;
 		this.referencedType = referencedType;
 	}
 	
-	public ReferenceValue(TypeInterface referencedType) {
+	public ReferenceValue(Type referencedType) {
 		this.heapAddress = ReferenceValue.DEFAULT_HEAP_ADDRESS;
 		this.referencedType = referencedType;
 	}
@@ -27,12 +27,12 @@ public class ReferenceValue implements ValueInterface{
 		return this.heapAddress;
 	}
 	
-	public TypeInterface getReferencedType() {
+	public Type getReferencedType() {
 		return this.referencedType;
 	}
 	
 	@Override
-	public TypeInterface getType() {
+	public Type getType() {
 		return new ReferenceType(this.referencedType);
 	}
 	

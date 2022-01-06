@@ -1,7 +1,7 @@
 package model.value;
 
 import model.type.StringType;
-import model.type.TypeInterface;
+import model.type.Type;
 
 public class StringValue implements ValueInterface{
 	private final String value;
@@ -31,7 +31,7 @@ public class StringValue implements ValueInterface{
 	}
 	
 	@Override
-	public TypeInterface getType() {
+	public Type getType() {
 		return new StringType();
 	}
 }

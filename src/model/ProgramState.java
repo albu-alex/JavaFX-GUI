@@ -6,27 +6,27 @@ import exception.EmptyADTException;
 import model.ADT.DictionaryInterface;
 import model.ADT.ListInterface;
 import model.ADT.StackInterface;
-import model.statement.StatementInterface;
+import model.statement.Statement;
 import model.value.StringValue;
 import model.value.ValueInterface;
 
 public class ProgramState {
-	private StackInterface<StatementInterface> executionStack;
+	private StackInterface<Statement> executionStack;
 	private DictionaryInterface<String, ValueInterface> symbolTable;
 	private ListInterface<ValueInterface> output;
 	private DictionaryInterface<StringValue, BufferedReader> fileTable;
 	private DictionaryInterface<Integer, ValueInterface> heap;
-	private StatementInterface originalProgram;
+	private Statement originalProgram;
 	private static int globalThreadCount = 1;
 	private final int threadID;
 	
 	public ProgramState(
-			StackInterface<StatementInterface> stack, 
+			StackInterface<Statement> stack,
 			DictionaryInterface<String, ValueInterface> symbolTable, 
 			ListInterface<ValueInterface> output,
 			DictionaryInterface<StringValue, BufferedReader> fileTable,
 			DictionaryInterface<Integer, ValueInterface> heap,
-			StatementInterface program
+			Statement program
 			) {
 		this.executionStack = stack;
 		this.symbolTable = symbolTable;
@@ -48,7 +48,7 @@ public class ProgramState {
 		return this.threadID;
 	}
 	
-	public StackInterface<StatementInterface> getExecutionStack() {
+	public StackInterface<Statement> getExecutionStack() {
 		return this.executionStack;
 	}
 	
@@ -68,11 +68,11 @@ public class ProgramState {
 		return this.heap;
 	}
 	
-	public StatementInterface getOriginalProgram() {
+	public Statement getOriginalProgram() {
 		return this.originalProgram;
 	}
 	
-	public void setStatement(StatementInterface statement) {
+	public void setStatement(Statement statement) {
 		// we don't add null values to the exeStack because the Deque doesn't accept it
 		if (statement != null) {
 			this.executionStack.push(statement);
@@ -87,7 +87,7 @@ public class ProgramState {
 		if (this.executionStack.size() == 0) {
 			throw new EmptyADTException("ProgramState: No program states available");
 		}
-		StatementInterface currentStatement = this.executionStack.pop();
+		Statement currentStatement = this.executionStack.pop();
 		return currentStatement.execute(this);
 	}
 	

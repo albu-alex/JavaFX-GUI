@@ -4,17 +4,17 @@ import exception.InvalidTypeException;
 import model.ProgramState;
 import model.ADT.DictionaryInterface;
 import model.ADT.StackInterface;
-import model.expression.ExpressionInterface;
+import model.expression.Expression;
 import model.type.BoolType;
-import model.type.TypeInterface;
+import model.type.Type;
 
-public class ForStatement implements StatementInterface {
-	private final StatementInterface initialStatement;
-	private final ExpressionInterface conditionalExpression;
-	private final StatementInterface finalStatement;
-	private final StatementInterface bodyStatement; // the one inside the curly brackets
+public class ForStatement implements Statement {
+	private final Statement initialStatement;
+	private final Expression conditionalExpression;
+	private final Statement finalStatement;
+	private final Statement bodyStatement; // the one inside the curly brackets
 	
-	public ForStatement(StatementInterface initialStatement, ExpressionInterface conditionalExpression, StatementInterface finalStatement, StatementInterface innerStatement) {
+	public ForStatement(Statement initialStatement, Expression conditionalExpression, Statement finalStatement, Statement innerStatement) {
 		this.initialStatement = initialStatement;
 		this.conditionalExpression = conditionalExpression;
 		this.finalStatement = finalStatement;
@@ -30,7 +30,7 @@ public class ForStatement implements StatementInterface {
 			throw new InvalidTypeException("ForStatement: FinalStatement is not an AssignmentStatement");
 		}
 		
-		StackInterface<StatementInterface> stack = crtState.getExecutionStack();
+		StackInterface<Statement> stack = crtState.getExecutionStack();
 		stack.push(new WhileStatement(
 					this.conditionalExpression,
 					new CompoundStatement(this.bodyStatement, this.finalStatement)
@@ -55,8 +55,8 @@ public class ForStatement implements StatementInterface {
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
 		// normally, initial and finalStatement are AssignmentStatements, so they will not modify the type environment,
 		// so we can write them separately, without storing each resulting typeEnv; basically we only call this to check for exceptions
 		this.initialStatement.getTypeEnvironment(initialTypeEnvironment);

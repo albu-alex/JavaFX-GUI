@@ -4,15 +4,15 @@ import exception.InvalidTypeException;
 import exception.UndefinedVariableException;
 import model.ProgramState;
 import model.ADT.DictionaryInterface;
-import model.expression.ExpressionInterface;
-import model.type.TypeInterface;
+import model.expression.Expression;
+import model.type.Type;
 import model.value.ValueInterface;
 
-public class AssignmentStatement implements StatementInterface{
+public class AssignmentStatement implements Statement {
 	private final String variableName; // left operator
-	private final ExpressionInterface expression;  // right operator
+	private final Expression expression;  // right operator
 
-	public AssignmentStatement(String variableName, ExpressionInterface expression) {
+	public AssignmentStatement(String variableName, Expression expression) {
 		this.variableName = variableName;
 		this.expression = expression;
 	}
@@ -40,8 +40,8 @@ public class AssignmentStatement implements StatementInterface{
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
 		if (initialTypeEnvironment.getValue(this.variableName).equals(this.expression.typeCheck(initialTypeEnvironment)) == false) {
 			throw new InvalidTypeException("AssignmentStatement: type of "+ this.variableName + " doesn't match the expression's type");
 		}

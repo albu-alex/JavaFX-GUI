@@ -2,9 +2,9 @@ package model.statement;
 
 import model.ProgramState;
 import model.ADT.DictionaryInterface;
-import model.type.TypeInterface;
+import model.type.Type;
 
-public class EmptyStatement implements StatementInterface{
+public class EmptyStatement implements Statement {
 
 	@Override
 	public ProgramState execute(ProgramState crtState) throws Exception {
@@ -18,8 +18,8 @@ public class EmptyStatement implements StatementInterface{
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
 		return initialTypeEnvironment;
 	}
 

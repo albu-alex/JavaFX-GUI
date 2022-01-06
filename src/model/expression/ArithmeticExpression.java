@@ -5,16 +5,16 @@ import exception.InvalidOperatorException;
 import exception.InvalidTypeException;
 import model.ADT.DictionaryInterface;
 import model.type.IntType;
-import model.type.TypeInterface;
+import model.type.Type;
 import model.value.IntValue;
 import model.value.ValueInterface;
 
-public class ArithmeticExpression implements ExpressionInterface{
-	private final ExpressionInterface firstExp;
-	private final ExpressionInterface secondExp;
+public class ArithmeticExpression implements Expression {
+	private final Expression firstExp;
+	private final Expression secondExp;
 	private final String operator;
 	
-	public ArithmeticExpression(ExpressionInterface firstExp, ExpressionInterface secondExp, String operator) {
+	public ArithmeticExpression(Expression firstExp, Expression secondExp, String operator) {
 		this.firstExp = firstExp;
 		this.secondExp = secondExp;
 		this.operator = operator;
@@ -59,8 +59,8 @@ public class ArithmeticExpression implements ExpressionInterface{
 	}
 
 	@Override
-	public TypeInterface typeCheck(DictionaryInterface<String, TypeInterface> typeEnvironment) throws Exception {
-		TypeInterface firstType, secondType, intType;
+	public Type typeCheck(DictionaryInterface<String, Type> typeEnvironment) throws Exception {
+		Type firstType, secondType, intType;
 		firstType = this.firstExp.typeCheck(typeEnvironment);
 		secondType = this.secondExp.typeCheck(typeEnvironment);
 		intType = new IntType();

@@ -4,22 +4,22 @@ import exception.InvalidTypeException;
 import model.ProgramState;
 import model.ADT.DictionaryInterface;
 import model.ADT.StackInterface;
-import model.expression.ExpressionInterface;
+import model.expression.Expression;
 import model.type.BoolType;
-import model.type.TypeInterface;
+import model.type.Type;
 
-public class RepeatUntilStatement implements StatementInterface {
-	private final StatementInterface statement;
-	private final ExpressionInterface conditionalExpression;
+public class RepeatUntilStatement implements Statement {
+	private final Statement statement;
+	private final Expression conditionalExpression;
 
-	public RepeatUntilStatement(StatementInterface statement, ExpressionInterface conditionalExpression) {
+	public RepeatUntilStatement(Statement statement, Expression conditionalExpression) {
 		this.statement = statement;
 		this.conditionalExpression = conditionalExpression;
 	}
 	
 	@Override
 	public ProgramState execute(ProgramState crtState) throws Exception {
-		StackInterface<StatementInterface> stack = crtState.getExecutionStack();
+		StackInterface<Statement> stack = crtState.getExecutionStack();
 		stack.push(new WhileStatement(this.conditionalExpression, this.statement, false));
 		return this.statement.execute(crtState);
 	}
@@ -33,8 +33,8 @@ public class RepeatUntilStatement implements StatementInterface {
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
 		if (this.conditionalExpression.typeCheck(initialTypeEnvironment).equals(new BoolType()) == false) {
 			throw new InvalidTypeException("RepeatUntilStatement: Conditional expression is not boolean");
 		}

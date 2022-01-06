@@ -4,18 +4,18 @@ import exception.InvalidTypeException;
 import model.ProgramState;
 import model.ADT.DictionaryInterface;
 import model.ADT.StackInterface;
-import model.expression.ExpressionInterface;
+import model.expression.Expression;
 import model.type.BoolType;
-import model.type.TypeInterface;
+import model.type.Type;
 import model.value.BoolValue;
 import model.value.ValueInterface;
 
-public class IfStatement implements StatementInterface{
-	private final ExpressionInterface conditionalExpression;
-	private final StatementInterface trueConditionStatement;
-	private final StatementInterface falseConditionStatement;
+public class IfStatement implements Statement {
+	private final Expression conditionalExpression;
+	private final Statement trueConditionStatement;
+	private final Statement falseConditionStatement;
 	
-	public IfStatement(ExpressionInterface conditionalExpression, StatementInterface trueConditionStatement, StatementInterface falseConditionStatement) {
+	public IfStatement(Expression conditionalExpression, Statement trueConditionStatement, Statement falseConditionStatement) {
 		this.conditionalExpression = conditionalExpression;
 		this.trueConditionStatement = trueConditionStatement;
 		this.falseConditionStatement = falseConditionStatement;
@@ -23,7 +23,7 @@ public class IfStatement implements StatementInterface{
 	
 	@Override
 	public ProgramState execute(ProgramState crtState) throws Exception {
-		StackInterface<StatementInterface> stack = crtState.getExecutionStack();
+		StackInterface<Statement> stack = crtState.getExecutionStack();
 		DictionaryInterface<String, ValueInterface> symbolTable = crtState.getSymbolTable();
 		DictionaryInterface<Integer, ValueInterface> heap = crtState.getHeap();
 		
@@ -48,8 +48,8 @@ public class IfStatement implements StatementInterface{
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
 		if (this.conditionalExpression.typeCheck(initialTypeEnvironment).equals(new BoolType()) == false) {
 			throw new InvalidTypeException("IfStatement: Conditional expression is not boolean");
 		}

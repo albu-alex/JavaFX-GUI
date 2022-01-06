@@ -3,14 +3,14 @@ package model.statement;
 import model.ProgramState;
 import model.ADT.DictionaryInterface;
 import model.ADT.ListInterface;
-import model.expression.ExpressionInterface;
-import model.type.TypeInterface;
+import model.expression.Expression;
+import model.type.Type;
 import model.value.ValueInterface;
 
-public class PrintStatement implements StatementInterface {
-	private final ExpressionInterface expressionToPrint;
+public class PrintStatement implements Statement {
+	private final Expression expressionToPrint;
 
-	public PrintStatement(ExpressionInterface expressionToPrint) {
+	public PrintStatement(Expression expressionToPrint) {
 		this.expressionToPrint = expressionToPrint;
 	}
 	
@@ -33,8 +33,8 @@ public class PrintStatement implements StatementInterface {
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
 		this.expressionToPrint.typeCheck(initialTypeEnvironment); // throws an exception if the expression's type is invalid
 		return initialTypeEnvironment; // the type environment is not modified
 	}

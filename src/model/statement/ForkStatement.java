@@ -4,13 +4,13 @@ import model.ProgramState;
 import model.ADT.DictionaryInterface;
 import model.ADT.MyStack;
 import model.ADT.StackInterface;
-import model.type.TypeInterface;
+import model.type.Type;
 import model.value.ValueInterface;
 
-public class ForkStatement implements StatementInterface {
-	private final StatementInterface threadStatements;
+public class ForkStatement implements Statement {
+	private final Statement threadStatements;
 	
-	public ForkStatement(StatementInterface threadInstructions) {
+	public ForkStatement(Statement threadInstructions) {
 		this.threadStatements = threadInstructions;
 	}
 	
@@ -20,7 +20,7 @@ public class ForkStatement implements StatementInterface {
 			return null;
 		}
 		
-		StackInterface<StatementInterface> stack = new MyStack<StatementInterface>();
+		StackInterface<Statement> stack = new MyStack<Statement>();
 		DictionaryInterface<String, ValueInterface> symbolTable = parentThread.getSymbolTable().clone();
 		return new ProgramState(stack, symbolTable, parentThread.getOutput(), parentThread.getFileTable(), parentThread.getHeap(), this.threadStatements);
 	}
@@ -33,8 +33,8 @@ public class ForkStatement implements StatementInterface {
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
 		this.threadStatements.getTypeEnvironment(initialTypeEnvironment.clone());
 		return initialTypeEnvironment;
 	}

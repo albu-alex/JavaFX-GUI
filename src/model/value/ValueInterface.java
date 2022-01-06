@@ -1,7 +1,7 @@
 package model.value;
 
-import model.type.TypeInterface;
+import model.type.Type;
 
 public interface ValueInterface {
-	public TypeInterface getType();
+	public Type getType();
 }

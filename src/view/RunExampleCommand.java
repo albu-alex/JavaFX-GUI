@@ -13,15 +13,15 @@ import model.ADT.MyHeap;
 import model.ADT.MyList;
 import model.ADT.MyStack;
 import model.ADT.StackInterface;
-import model.statement.StatementInterface;
-import model.type.TypeInterface;
+import model.statement.Statement;
+import model.type.Type;
 import model.value.StringValue;
 import model.value.ValueInterface;
 import repository.Repository;
 import repository.RepositoryInterface;
 
 public class RunExampleCommand extends Command {
-	private final StatementInterface crtStatement;
+	private final Statement crtStatement;
 	private final String repositoryLocation;
 	
 	public RunExampleCommand(String key, Example exampleToRun) {
@@ -32,13 +32,13 @@ public class RunExampleCommand extends Command {
 	
 	@Override
 	public void execute() throws Exception {
-		StackInterface<StatementInterface> stack = new MyStack<StatementInterface>();
+		StackInterface<Statement> stack = new MyStack<Statement>();
 		DictionaryInterface<String, ValueInterface> symbolTable = new MyDictionary<String, ValueInterface>();
 		ListInterface<ValueInterface> output = new MyList<ValueInterface>();
 		DictionaryInterface<StringValue, BufferedReader> fileTable = new MyDictionary<StringValue, BufferedReader>();
 		DictionaryInterface<Integer, ValueInterface> heap = new MyHeap<Integer, ValueInterface>();
 		
-		DictionaryInterface<String, TypeInterface> typeEnvironment = new MyDictionary<String, TypeInterface>();
+		DictionaryInterface<String, Type> typeEnvironment = new MyDictionary<String, Type>();
 		this.crtStatement.getTypeEnvironment(typeEnvironment);
 		ProgramState crtProgramState = new ProgramState(stack, symbolTable, output, fileTable, heap, this.crtStatement);
 		

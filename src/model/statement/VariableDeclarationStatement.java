@@ -8,14 +8,14 @@ import model.type.BoolType;
 import model.type.IntType;
 import model.type.ReferenceType;
 import model.type.StringType;
-import model.type.TypeInterface;
+import model.type.Type;
 import model.value.ValueInterface;
 
-public class VariableDeclarationStatement implements StatementInterface{
+public class VariableDeclarationStatement implements Statement {
 	private final String variableName;
-	private final TypeInterface variableType;
+	private final Type variableType;
 	
-	public VariableDeclarationStatement(String variableName, TypeInterface variableType) {
+	public VariableDeclarationStatement(String variableName, Type variableType) {
 		this.variableName = variableName;
 		this.variableType = variableType;
 	}
@@ -24,7 +24,7 @@ public class VariableDeclarationStatement implements StatementInterface{
 	public ProgramState execute(ProgramState crtState) throws Exception {
 		DictionaryInterface<String, ValueInterface> symbolTable = crtState.getSymbolTable();
 		
-		if (symbolTable.isDefined(this.variableName) == true) {
+		if (symbolTable.isDefined(this.variableName)) {
 			throw new AlreadyDefinedVariableException("VariableDeclarationStatement: Variable " + this.variableName + " is already defined");
 		}
 		
@@ -40,7 +40,7 @@ public class VariableDeclarationStatement implements StatementInterface{
 		else if (this.variableType instanceof ReferenceType) {
 			symbolTable.insert(this.variableName, this.variableType.getDefaultValue());
 		}
-		// I'm not sure if this part will ever be reached, because the compiler doesn't allow for anything but a TypeInterface
+		// I'm not sure if this part will ever be reached, because the compiler doesn't allow for anything but a Type
 		// to be added, but just in case...
 		else {
 			throw new InvalidTypeException("VariableDeclarationStatement: Invalid type when trying to declare " + this.variableName);
@@ -56,8 +56,8 @@ public class VariableDeclarationStatement implements StatementInterface{
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
 		initialTypeEnvironment.insert(this.variableName, this.variableType);
 		return initialTypeEnvironment; // this is the only statement that changes the type environment
 	}

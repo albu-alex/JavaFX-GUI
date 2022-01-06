@@ -5,19 +5,19 @@ import exception.InvalidTypeException;
 import exception.UndefinedVariableException;
 import model.ProgramState;
 import model.ADT.DictionaryInterface;
-import model.expression.ExpressionInterface;
+import model.expression.Expression;
 import model.type.IntType;
 import model.type.StringType;
-import model.type.TypeInterface;
+import model.type.Type;
 import model.value.IntValue;
 import model.value.StringValue;
 import model.value.ValueInterface;
 
-public class ReadFileStatement implements StatementInterface{
-	private final ExpressionInterface filePath;
+public class ReadFileStatement implements Statement {
+	private final Expression filePath;
 	private final String variableName;
 	
-	public ReadFileStatement(ExpressionInterface filePath, String variableName) {
+	public ReadFileStatement(Expression filePath, String variableName) {
 		this.filePath = filePath;
 		this.variableName = variableName;
 	}
@@ -60,8 +60,8 @@ public class ReadFileStatement implements StatementInterface{
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
 		if (initialTypeEnvironment.getValue(this.variableName).equals(new IntType()) == false) {
 			throw new InvalidTypeException("ReadFileStatement: " + this.variableName + " is not an integer");
 		}

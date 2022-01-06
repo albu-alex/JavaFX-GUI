@@ -6,16 +6,16 @@ import exception.InvalidTypeException;
 import exception.UndefinedVariableException;
 import model.ProgramState;
 import model.ADT.DictionaryInterface;
-import model.expression.ExpressionInterface;
+import model.expression.Expression;
 import model.type.StringType;
-import model.type.TypeInterface;
+import model.type.Type;
 import model.value.StringValue;
 import model.value.ValueInterface;
 
-public class CloseReadFileStatement implements StatementInterface{
-	private final ExpressionInterface filePath;
+public class CloseReadFileStatement implements Statement {
+	private final Expression filePath;
 	
-	public CloseReadFileStatement(ExpressionInterface filePath) {
+	public CloseReadFileStatement(Expression filePath) {
 		this.filePath = filePath;
 	}
 	
@@ -47,8 +47,8 @@ public class CloseReadFileStatement implements StatementInterface{
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
 		if (this.filePath.typeCheck(initialTypeEnvironment).equals(new StringType()) == false) {
 			throw new InvalidTypeException("CloseReadFileStatement: file path should be a stringValue");
 		}

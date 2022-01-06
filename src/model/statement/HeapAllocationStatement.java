@@ -5,17 +5,17 @@ import exception.UndefinedVariableException;
 import model.ProgramState;
 import model.ADT.DictionaryInterface;
 import model.ADT.MyHeap;
-import model.expression.ExpressionInterface;
+import model.expression.Expression;
 import model.type.ReferenceType;
-import model.type.TypeInterface;
+import model.type.Type;
 import model.value.ReferenceValue;
 import model.value.ValueInterface;
 
-public class HeapAllocationStatement implements StatementInterface {
+public class HeapAllocationStatement implements Statement {
 	private final String variableName;
-	private final ExpressionInterface expression;
+	private final Expression expression;
 	
-	public HeapAllocationStatement(String variableName, ExpressionInterface expression) {
+	public HeapAllocationStatement(String variableName, Expression expression) {
 		this.variableName = variableName;
 		this.expression = expression;
 	}
@@ -31,7 +31,7 @@ public class HeapAllocationStatement implements StatementInterface {
 		
 		ValueInterface variableValue = symbolTable.getValue(this.variableName);
 		ValueInterface expressionValue = this.expression.evaluate(symbolTable, heap);
-		TypeInterface referencedType = ((ReferenceValue)variableValue).getReferencedType();
+		Type referencedType = ((ReferenceValue)variableValue).getReferencedType();
 		
 		int newPositionInHeap = ((MyHeap<Integer, ValueInterface>)heap).getFirstAvailablePosition();
 		heap.insert(newPositionInHeap, expressionValue);
@@ -48,9 +48,9 @@ public class HeapAllocationStatement implements StatementInterface {
 	}
 
 	@Override
-	public DictionaryInterface<String, TypeInterface> getTypeEnvironment(
-			DictionaryInterface<String, TypeInterface> initialTypeEnvironment) throws Exception {
-		TypeInterface expressionReferenceType = new ReferenceType(this.expression.typeCheck(initialTypeEnvironment));
+	public DictionaryInterface<String, Type> getTypeEnvironment(
+			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
+		Type expressionReferenceType = new ReferenceType(this.expression.typeCheck(initialTypeEnvironment));
 		// the type of the reference that "variableName" is allocated to
 		// if getValue does not return a ReferenceValue, the equals will fail; it will also fail if the inner types don't match
 		// so we're doing both checks simultaneously

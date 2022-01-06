@@ -20,7 +20,7 @@ import model.statement.OpenReadFileStatement;
 import model.statement.PrintStatement;
 import model.statement.ReadFileStatement;
 import model.statement.RepeatUntilStatement;
-import model.statement.StatementInterface;
+import model.statement.Statement;
 import model.statement.VariableDeclarationStatement;
 import model.statement.WhileStatement;
 import model.type.BoolType;
@@ -33,7 +33,7 @@ import model.value.StringValue;
 public class AllExamples {
 	private final String SRC_FOLDER_PATH = "D:\\Cursuri\\MAP_Projects\\fourth_homework\\interpreter";
 	
-	private StatementInterface composeStatement(MyList<StatementInterface> crtList){
+	private Statement composeStatement(MyList<Statement> crtList){
 		if (crtList.size() == 0) {
 			return new EmptyStatement();
 		}
@@ -47,7 +47,7 @@ public class AllExamples {
 			}
 		}
 		
-		StatementInterface lastStatement = null;
+		Statement lastStatement = null;
 		try {
 			lastStatement = crtList.pop();
 			return new CompoundStatement(composeStatement(crtList), lastStatement);
@@ -59,7 +59,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample1() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		// int a; a = 23; print(a);
 		statementList.addLast(new VariableDeclarationStatement("a", new IntType()));
@@ -70,7 +70,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample2() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		// int a; int b; a = 2 + 3 * 5; b = a + 1; print(b);
 		statementList.addLast(new VariableDeclarationStatement("a", new IntType()));
@@ -92,7 +92,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample3() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		//bool a; int v; a=true; (If a Then v=2 Else v=3); print(v);
 		statementList.addLast(new VariableDeclarationStatement("a", new BoolType()));
@@ -109,7 +109,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample4() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		// openReadFile(str); int a; readFile(str); print(a); readFile(str); print(a); closeReadFile();
 		ValueExpression val = new ValueExpression(new StringValue(this.SRC_FOLDER_PATH + "\\example4.in"));
@@ -125,7 +125,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample5() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		// Ref int v; new(v, 23); Ref Ref int a; new(a, v); print(v); print(a);
 		statementList.addLast(new VariableDeclarationStatement("v", new ReferenceType(new IntType())));
@@ -139,7 +139,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample6() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		// Ref int v; new(v, 23); Ref Ref int a; new(a, v); print(rH(v)); print(rH(rH(a)) + 5);
 		statementList.addLast(new VariableDeclarationStatement("v", new ReferenceType(new IntType())));
@@ -156,7 +156,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample7() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		// Ref int v; new(v, 23); print(rH(v)); wH(v, 24); print(rH(v) + 5);
 		statementList.addLast(new VariableDeclarationStatement("v", new ReferenceType(new IntType())));
@@ -172,7 +172,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample8() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		// int v; v=4; (while (v>0) print(v); v = v - 1); print(v)
 		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
@@ -194,7 +194,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample9() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		// Ref int v; new(v, 23); Ref Ref int a; new(a, v); new(v, 24); print(rH(rH(a)));
 		statementList.addLast(new VariableDeclarationStatement("v", new ReferenceType(new IntType())));
@@ -208,7 +208,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample10() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		//int v; Ref int a; v=10; new(a,22); fork(wH(a,30); v=32; print(v); print(rH(a))); print(v); print(rH(a));
 		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
@@ -216,7 +216,7 @@ public class AllExamples {
 		statementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(10))));
 		statementList.addLast(new HeapAllocationStatement("a", new ValueExpression(new IntValue(22))));
 		
-		MyList<StatementInterface> threadStatementList = new MyList<StatementInterface>();
+		MyList<Statement> threadStatementList = new MyList<Statement>();
 		threadStatementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(30))));
 		threadStatementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(32))));
 		threadStatementList.addLast(new PrintStatement(new VariableExpression("v")));
@@ -230,7 +230,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample11() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		//int v; Ref int a; v=10; new(a,22); fork(wH(a,30); fork(v=33; print(v)); v=32; print(v); print(rH(a))); print(v); print(rH(a));
 		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
@@ -238,10 +238,10 @@ public class AllExamples {
 		statementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(10))));
 		statementList.addLast(new HeapAllocationStatement("a", new ValueExpression(new IntValue(22))));
 		
-		MyList<StatementInterface> threadStatementList = new MyList<StatementInterface>();
+		MyList<Statement> threadStatementList = new MyList<Statement>();
 		threadStatementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(30))));
 		
-		MyList<StatementInterface> innerThreadStatementList = new MyList<StatementInterface>();
+		MyList<Statement> innerThreadStatementList = new MyList<Statement>();
 		innerThreadStatementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(33))));
 		innerThreadStatementList.addLast(new PrintStatement(new VariableExpression("v")));
 		
@@ -258,7 +258,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample12() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		//int v; Ref int a; v=10; new(a,22); fork(wH(a,30); fork(v=33; wH(a,24);); print(rH(a)); v=32; print(rH(a))); print(v); print(rH(a));
 		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
@@ -266,10 +266,10 @@ public class AllExamples {
 		statementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(10))));
 		statementList.addLast(new HeapAllocationStatement("a", new ValueExpression(new IntValue(22))));
 		
-		MyList<StatementInterface> threadStatementList = new MyList<StatementInterface>();
+		MyList<Statement> threadStatementList = new MyList<Statement>();
 		threadStatementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(30))));
 		
-		MyList<StatementInterface> innerThreadStatementList = new MyList<StatementInterface>();
+		MyList<Statement> innerThreadStatementList = new MyList<Statement>();
 		innerThreadStatementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(33))));
 		innerThreadStatementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(24))));
 		
@@ -286,7 +286,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample13() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		//int v; Ref int a; v=10; new(a,22); fork(wH(a,30); fork(v=33; fork(v=34; print(v);) print(v); ); print(rH(a)); v=32; print(rH(a))); print(v); print(rH(a));
 		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
@@ -294,13 +294,13 @@ public class AllExamples {
 		statementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(10))));
 		statementList.addLast(new HeapAllocationStatement("a", new ValueExpression(new IntValue(22))));
 		
-		MyList<StatementInterface> threadStatementList = new MyList<StatementInterface>();
+		MyList<Statement> threadStatementList = new MyList<Statement>();
 		threadStatementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(30))));
 		
-		MyList<StatementInterface> innerThreadStatementList = new MyList<StatementInterface>();
+		MyList<Statement> innerThreadStatementList = new MyList<Statement>();
 		innerThreadStatementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(33))));
 		
-		MyList<StatementInterface> innerInnerThreadStatementList = new MyList<StatementInterface>();
+		MyList<Statement> innerInnerThreadStatementList = new MyList<Statement>();
 		innerInnerThreadStatementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(34))));
 		innerInnerThreadStatementList.addLast(new PrintStatement(new VariableExpression("v")));
 		innerThreadStatementList.addLast(new ForkStatement(this.composeStatement(innerInnerThreadStatementList)));
@@ -319,7 +319,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample14() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		//int v; Ref int a; v=10; new(a,22); fork(wH(a,30); fork(fork(wH(a,35); print(v);); v=33; print(v); ); print(rH(a)); v=32; print(rH(a))); print(v); print(rH(a));
 		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
@@ -327,11 +327,11 @@ public class AllExamples {
 		statementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(10))));
 		statementList.addLast(new HeapAllocationStatement("a", new ValueExpression(new IntValue(22))));
 		
-		MyList<StatementInterface> threadStatementList = new MyList<StatementInterface>();
+		MyList<Statement> threadStatementList = new MyList<Statement>();
 		threadStatementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(30))));
 		
-		MyList<StatementInterface> innerThreadStatementList = new MyList<StatementInterface>();
-		MyList<StatementInterface> innerInnerThreadStatementList = new MyList<StatementInterface>();
+		MyList<Statement> innerThreadStatementList = new MyList<Statement>();
+		MyList<Statement> innerInnerThreadStatementList = new MyList<Statement>();
 		innerInnerThreadStatementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(35))));
 		innerInnerThreadStatementList.addLast(new PrintStatement(new VariableExpression("v")));
 		
@@ -352,7 +352,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample15() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		// int v; v=2; (while (v>0) fork(print(v + 23);); v = v - 1;); print(v);
 		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
@@ -379,7 +379,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample16() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		// int v; for(v = 4; v > 0; v = v - 1) (print(v);) print(v);
 		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
@@ -401,7 +401,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample17() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		// int v; for(v = 2; v > 0; v = v - 1) (fork(print(v + 23);) print(v);
 		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
@@ -427,7 +427,7 @@ public class AllExamples {
 	}
 	
 	public Example getExample18() {
-		MyList<StatementInterface> statementList = new MyList<StatementInterface>();
+		MyList<Statement> statementList = new MyList<Statement>();
 		
 		// int v; v = 0; repeat(fork(print(v); v = v - 1;); v = v + 1;) until (v == 3); int x; x = 1; print(v * 10);
 		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
