@@ -57,6 +57,6 @@ public class VariableDeclarationStatement implements Statement {
 	public DictionaryInterface<String, Type> getTypeEnvironment(
 			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
 		initialTypeEnvironment.insert(this.variableName, this.variableType);
-		return initialTypeEnvironment; // this is the only statement that changes the type environment
+		return initialTypeEnvironment;
 	}
 }

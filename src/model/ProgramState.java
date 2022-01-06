@@ -94,7 +94,7 @@ public class ProgramState {
 	public String toString() {
 		String representation = "";
 		
-		representation += "\n======== ThreadID: " + Integer.toString(this.threadID) + "========\n";
+		representation += "\n======== ThreadID: " + this.threadID + "========\n";
 		representation += "ExecutionStack:\n";
 		representation += this.executionStack.toString();
 		representation += "\nSymbolTable:\n";

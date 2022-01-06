@@ -18,6 +18,6 @@ public class BoolType implements Type {
 
 	@Override
 	public ValueInterface getDefaultValue() {
-		return new BoolValue(); // the default constructor sets the value to the default one
+		return new BoolValue();
 	}
 }

@@ -18,6 +18,6 @@ public class IntType implements Type {
 
 	@Override
 	public ValueInterface getDefaultValue() {
-		return new IntValue(); // the default constructor sets the value to the default one
+		return new IntValue();
 	}
 }

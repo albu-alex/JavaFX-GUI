@@ -11,7 +11,6 @@ import model.statement.AssignmentStatement;
 import model.statement.CloseReadFileStatement;
 import model.statement.CompoundStatement;
 import model.statement.EmptyStatement;
-import model.statement.ForStatement;
 import model.statement.ForkStatement;
 import model.statement.HeapAllocationStatement;
 import model.statement.HeapWritingStatement;
@@ -19,7 +18,6 @@ import model.statement.IfStatement;
 import model.statement.OpenReadFileStatement;
 import model.statement.PrintStatement;
 import model.statement.ReadFileStatement;
-import model.statement.RepeatUntilStatement;
 import model.statement.Statement;
 import model.statement.VariableDeclarationStatement;
 import model.statement.WhileStatement;
@@ -257,203 +255,8 @@ public class AllExamples {
 		return new Example(this.composeStatement(statementList), "int v; Ref int a; v=10; new(a,22); fork(wH(a,30); fork(v=33; print(v)); v=32; print(v); print(rH(a))); print(v); print(rH(a));", this.SRC_FOLDER_PATH + "\\log11.in");
 	}
 	
-	public Example getExample12() {
-		MyList<Statement> statementList = new MyList<Statement>();
-		
-		//int v; Ref int a; v=10; new(a,22); fork(wH(a,30); fork(v=33; wH(a,24);); print(rH(a)); v=32; print(rH(a))); print(v); print(rH(a));
-		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
-		statementList.addLast(new VariableDeclarationStatement("a", new ReferenceType(new IntType())));
-		statementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(10))));
-		statementList.addLast(new HeapAllocationStatement("a", new ValueExpression(new IntValue(22))));
-		
-		MyList<Statement> threadStatementList = new MyList<Statement>();
-		threadStatementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(30))));
-		
-		MyList<Statement> innerThreadStatementList = new MyList<Statement>();
-		innerThreadStatementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(33))));
-		innerThreadStatementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(24))));
-		
-		threadStatementList.addLast(new ForkStatement(this.composeStatement(innerThreadStatementList)));
-		threadStatementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))));
-		threadStatementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(32))));
-		threadStatementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))));
-		
-		statementList.addLast(new ForkStatement(this.composeStatement(threadStatementList)));
-		statementList.addLast(new PrintStatement(new VariableExpression("v")));
-		statementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))));
-		
-		return new Example(this.composeStatement(statementList), "int v; Ref int a; v=10; new(a,22); fork(wH(a,30); fork(v=33; wH(a,24);); print(rH(a)); v=32; print(rH(a))); print(v); print(rH(a));", this.SRC_FOLDER_PATH + "\\log12.in");
-	}
-	
-	public Example getExample13() {
-		MyList<Statement> statementList = new MyList<Statement>();
-		
-		//int v; Ref int a; v=10; new(a,22); fork(wH(a,30); fork(v=33; fork(v=34; print(v);) print(v); ); print(rH(a)); v=32; print(rH(a))); print(v); print(rH(a));
-		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
-		statementList.addLast(new VariableDeclarationStatement("a", new ReferenceType(new IntType())));
-		statementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(10))));
-		statementList.addLast(new HeapAllocationStatement("a", new ValueExpression(new IntValue(22))));
-		
-		MyList<Statement> threadStatementList = new MyList<Statement>();
-		threadStatementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(30))));
-		
-		MyList<Statement> innerThreadStatementList = new MyList<Statement>();
-		innerThreadStatementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(33))));
-		
-		MyList<Statement> innerInnerThreadStatementList = new MyList<Statement>();
-		innerInnerThreadStatementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(34))));
-		innerInnerThreadStatementList.addLast(new PrintStatement(new VariableExpression("v")));
-		innerThreadStatementList.addLast(new ForkStatement(this.composeStatement(innerInnerThreadStatementList)));
-		innerThreadStatementList.addLast(new PrintStatement(new VariableExpression("v")));
-		
-		threadStatementList.addLast(new ForkStatement(this.composeStatement(innerThreadStatementList)));
-		threadStatementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))));
-		threadStatementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(32))));
-		threadStatementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))));
-		
-		statementList.addLast(new ForkStatement(this.composeStatement(threadStatementList)));
-		statementList.addLast(new PrintStatement(new VariableExpression("v")));
-		statementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))));
-		
-		return new Example(this.composeStatement(statementList), "int v; Ref int a; v=10; new(a,22); fork(wH(a,30); fork(v=33; fork(v=34; print(v);) print(v); ); print(rH(a)); v=32; print(rH(a))); print(v); print(rH(a));", this.SRC_FOLDER_PATH + "\\log13.in");
-	}
-	
-	public Example getExample14() {
-		MyList<Statement> statementList = new MyList<Statement>();
-		
-		//int v; Ref int a; v=10; new(a,22); fork(wH(a,30); fork(fork(wH(a,35); print(v);); v=33; print(v); ); print(rH(a)); v=32; print(rH(a))); print(v); print(rH(a));
-		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
-		statementList.addLast(new VariableDeclarationStatement("a", new ReferenceType(new IntType())));
-		statementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(10))));
-		statementList.addLast(new HeapAllocationStatement("a", new ValueExpression(new IntValue(22))));
-		
-		MyList<Statement> threadStatementList = new MyList<Statement>();
-		threadStatementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(30))));
-		
-		MyList<Statement> innerThreadStatementList = new MyList<Statement>();
-		MyList<Statement> innerInnerThreadStatementList = new MyList<Statement>();
-		innerInnerThreadStatementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(35))));
-		innerInnerThreadStatementList.addLast(new PrintStatement(new VariableExpression("v")));
-		
-		innerThreadStatementList.addLast(new ForkStatement(this.composeStatement(innerInnerThreadStatementList)));
-		innerThreadStatementList.addLast(new PrintStatement(new VariableExpression("v")));
-		innerThreadStatementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(33))));
-		
-		threadStatementList.addLast(new ForkStatement(this.composeStatement(innerThreadStatementList)));
-		threadStatementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))));
-		threadStatementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(32))));
-		threadStatementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))));
-		
-		statementList.addLast(new ForkStatement(this.composeStatement(threadStatementList)));
-		statementList.addLast(new PrintStatement(new VariableExpression("v")));
-		statementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("a"))));
-		
-		return new Example(this.composeStatement(statementList), "int v; Ref int a; v=10; new(a,22); fork(wH(a,30); fork(fork(wH(a,35); print(v);); v=33; print(v); ); print(rH(a)); v=32; print(rH(a))); print(v); print(rH(a));", this.SRC_FOLDER_PATH + "\\log14.in");
-	}
-	
-	public Example getExample15() {
-		MyList<Statement> statementList = new MyList<Statement>();
-		
-		// int v; v=2; (while (v>0) fork(print(v + 23);); v = v - 1;); print(v);
-		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
-		statementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(2))));
-		statementList.addLast(new WhileStatement(
-								new RelationalExpression(
-										new VariableExpression("v"), 
-										new ValueExpression(new IntValue(0)), 
-										">"), 
-								new CompoundStatement(
-									new ForkStatement(
-											new PrintStatement(
-													new ArithmeticExpression(
-															new VariableExpression("v"), 
-															new ValueExpression(new IntValue(23)), 
-															"+"))),
-									new AssignmentStatement("v", new ArithmeticExpression(
-											new VariableExpression("v"), 
-											new ValueExpression(new IntValue(1)), 
-											"-")))));
-		statementList.addLast(new PrintStatement(new VariableExpression("v")));
-		
-		return new Example(this.composeStatement(statementList), "int v; v=2; (while (v>0) fork(print(v + 23);); v = v - 1;); print(v);", this.SRC_FOLDER_PATH + "\\log15.in");
-	}
-	
-	public Example getExample16() {
-		MyList<Statement> statementList = new MyList<Statement>();
-		
-		// int v; for(v = 4; v > 0; v = v - 1) (print(v);) print(v);
-		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
-		statementList.addLast(new ForStatement(
-								new AssignmentStatement("v", new ValueExpression(new IntValue(4))), 
-								new RelationalExpression(
-										new VariableExpression("v"), 
-										new ValueExpression(new IntValue(0)), 
-										">"), 
-								new AssignmentStatement("v", new ArithmeticExpression(
-										new VariableExpression("v"), 
-										new ValueExpression(new IntValue(1)), 
-										"-")), 
-								new PrintStatement(new VariableExpression("v"))
-							));
-		statementList.addLast(new PrintStatement(new VariableExpression("v")));
-		
-		return new Example(this.composeStatement(statementList), "int v; for(v = 4; v > 0; v = v - 1) (print(v);) print(v);", this.SRC_FOLDER_PATH + "\\log16.in");
-	}
-	
-	public Example getExample17() {
-		MyList<Statement> statementList = new MyList<Statement>();
-		
-		// int v; for(v = 2; v > 0; v = v - 1) (fork(print(v + 23);) print(v);
-		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
-		statementList.addLast(new ForStatement(
-								new AssignmentStatement("v", new ValueExpression(new IntValue(2))), 
-								new RelationalExpression(
-										new VariableExpression("v"), 
-										new ValueExpression(new IntValue(0)), 
-										">"), 
-								new AssignmentStatement("v", new ArithmeticExpression(
-										new VariableExpression("v"), 
-										new ValueExpression(new IntValue(1)), 
-										"-")), 
-								new ForkStatement(new PrintStatement(
-													new ArithmeticExpression(
-														new VariableExpression("v"), 
-														new ValueExpression(new IntValue(23)), 
-														"+")))
-							));
-		statementList.addLast(new PrintStatement(new VariableExpression("v")));
-		
-		return new Example(this.composeStatement(statementList), "int v; for(v = 2; v > 0; v = v - 1) (fork(print(v + 23);) print(v);", this.SRC_FOLDER_PATH + "\\log17.in");
-	}
-	
-	public Example getExample18() {
-		MyList<Statement> statementList = new MyList<Statement>();
-		
-		// int v; v = 0; repeat(fork(print(v); v = v - 1;); v = v + 1;) until (v == 3); int x; x = 1; print(v * 10);
-		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
-		statementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(0))));
-		statementList.addLast(new RepeatUntilStatement(
-								new CompoundStatement(
-									new ForkStatement(new CompoundStatement(
-														new PrintStatement(new VariableExpression("v")), 
-														new AssignmentStatement("v", new ArithmeticExpression(
-																new VariableExpression("v"), 
-																new ValueExpression(new IntValue(1)), 
-																"-")))), 
-									new AssignmentStatement("v", new ArithmeticExpression(
-										new VariableExpression("v"), 
-										new ValueExpression(new IntValue(1)), 
-										"+"))), 
-								new RelationalExpression(new VariableExpression("v"), new ValueExpression(new IntValue(3)), "==")));
-		statementList.addLast(new VariableDeclarationStatement("x", new IntType()));
-		statementList.addLast(new AssignmentStatement("x", new ValueExpression(new IntValue(1))));
-		statementList.addLast(new PrintStatement(new ArithmeticExpression(new VariableExpression("v"), new ValueExpression(new IntValue(10)), "*")));
-		
-		return new Example(this.composeStatement(statementList), "int v; v = 0; repeat(fork(print(v); v = v - 1;); v = v + 1;) until (v == 3); int x; x = 1; print(v * 10);", this.SRC_FOLDER_PATH + "\\log18.in");
-	}
-	
 	public MyList<Example> getAllExamples() {
-		MyList<Example> exampleList = new MyList<Example>();
+		MyList<Example> exampleList = new MyList<>();
 		
 		exampleList.addLast(this.getExample1());
 		exampleList.addLast(this.getExample2());
@@ -466,13 +269,6 @@ public class AllExamples {
 		exampleList.addLast(this.getExample9());
 		exampleList.addLast(this.getExample10());
 		exampleList.addLast(this.getExample11());
-//		exampleList.addLast(this.getExample12());
-//		exampleList.addLast(this.getExample13());
-//		exampleList.addLast(this.getExample14());
-//		exampleList.addLast(this.getExample15());
-//		exampleList.addLast(this.getExample16());
-//		exampleList.addLast(this.getExample17());
-//		exampleList.addLast(this.getExample18());
 
 		return exampleList;
 	}

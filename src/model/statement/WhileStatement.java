@@ -39,14 +39,13 @@ public class WhileStatement implements Statement {
 			return this.statement.execute(crtState);
 		}
 		
-		return null; // if the condition is not met, obviously no new threads can be created
+		return null;
 	}
 	
 	public String toString() {
 		String representation = "";
 		String negationSymbolString = "";
-		// this indentation doesn't work past 1 level - I'm going to need sth like an indentationLevel when creating the statement
-		if (this.expectedLogicalValue == false) {
+		if (!this.expectedLogicalValue) {
 			negationSymbolString += "! ";
 		}
 		representation += ("while (" + negationSymbolString + this.conditionalExpression.toString() + ") {\n\t");
@@ -57,7 +56,7 @@ public class WhileStatement implements Statement {
 	@Override
 	public DictionaryInterface<String, Type> getTypeEnvironment(
 			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
-		if (this.conditionalExpression.typeCheck(initialTypeEnvironment).equals(new BoolType()) == false) {
+		if (!this.conditionalExpression.typeCheck(initialTypeEnvironment).equals(new BoolType())) {
 			throw new InvalidTypeException("WhileStatement: Conditional expression is not boolean");
 		}
 		this.statement.getTypeEnvironment(initialTypeEnvironment.clone());

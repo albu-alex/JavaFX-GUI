@@ -23,10 +23,10 @@ public class ForStatement implements Statement {
 	
 	@Override
 	public ProgramState execute(ProgramState crtState) throws Exception {
-		if (this.initialStatement instanceof AssignmentStatement == false) {
+		if (!(this.initialStatement instanceof AssignmentStatement)) {
 			throw new InvalidTypeException("ForStatement: InitialStatement is not an AssignmentStatement");
 		}
-		if (this.finalStatement instanceof AssignmentStatement == false) {
+		if (!(this.finalStatement instanceof AssignmentStatement)) {
 			throw new InvalidTypeException("ForStatement: FinalStatement is not an AssignmentStatement");
 		}
 		
@@ -60,7 +60,7 @@ public class ForStatement implements Statement {
 		// normally, initial and finalStatement are AssignmentStatements, so they will not modify the type environment,
 		// so we can write them separately, without storing each resulting typeEnv; basically we only call this to check for exceptions
 		this.initialStatement.getTypeEnvironment(initialTypeEnvironment);
-		if (this.conditionalExpression.typeCheck(initialTypeEnvironment).equals(new BoolType()) == false) {
+		if (!this.conditionalExpression.typeCheck(initialTypeEnvironment).equals(new BoolType())) {
 			throw new InvalidTypeException("ForStatement: Conditional expression is not boolean");
 		}
 		this.finalStatement.getTypeEnvironment(initialTypeEnvironment);

@@ -28,7 +28,7 @@ public class IfStatement implements Statement {
 		DictionaryInterface<Integer, ValueInterface> heap = crtState.getHeap();
 		
 		ValueInterface conditionalExpressionValue = this.conditionalExpression.evaluate(symbolTable, heap);
-		if (((BoolValue)conditionalExpressionValue).getValue() == true) { // the expression is true => go to the first branch
+		if (((BoolValue) conditionalExpressionValue).getValue()) { // the expression is true => go to the first branch
 			stack.push(this.trueConditionStatement);
 		}
 		else { // the expression is false => go to the second branch
@@ -40,7 +40,6 @@ public class IfStatement implements Statement {
 	
 	public String toString() {
 		String representation = "";
-		// this indentation doesn't work past 1 level - I'm going to need sth like an indentationLevel when creating the if statement
 		representation += ("if ("+ this.conditionalExpression.toString() + ") {\n\t");
 		representation += (this.trueConditionStatement.toString() + "}\n");
 		representation += ("else {\n\t" + this.falseConditionStatement.toString() + "}\n");
@@ -50,7 +49,7 @@ public class IfStatement implements Statement {
 	@Override
 	public DictionaryInterface<String, Type> getTypeEnvironment(
 			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
-		if (this.conditionalExpression.typeCheck(initialTypeEnvironment).equals(new BoolType()) == false) {
+		if (!this.conditionalExpression.typeCheck(initialTypeEnvironment).equals(new BoolType())) {
 			throw new InvalidTypeException("IfStatement: Conditional expression is not boolean");
 		}
 		this.trueConditionStatement.getTypeEnvironment(initialTypeEnvironment.clone());

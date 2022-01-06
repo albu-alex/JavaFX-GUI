@@ -26,7 +26,7 @@ public class ReadFileStatement implements Statement {
 	public ProgramState execute(ProgramState crtState) throws Exception {
 		DictionaryInterface<String, ValueInterface> symbolTable = crtState.getSymbolTable();
 		
-		if (symbolTable.isDefined(this.variableName) == false) {
+		if (!symbolTable.isDefined(this.variableName)) {
 			throw new UndefinedVariableException("ReadFileStatement: " + this.variableName + " is not defined in the symbolTable");
 		}
 		
@@ -36,7 +36,7 @@ public class ReadFileStatement implements Statement {
 		
 		// we know filePathValue is a StringValue, we can cast
 		String filePathString = ((StringValue)filePathValue).getValue();
-		if (fileTable.isDefined((StringValue)filePathValue) == false) {
+		if (!fileTable.isDefined((StringValue) filePathValue)) {
 			throw new UndefinedVariableException("ReadFileStatement: File path " + filePathString + " is not defined in the file table");
 		}
 		
@@ -62,10 +62,10 @@ public class ReadFileStatement implements Statement {
 	@Override
 	public DictionaryInterface<String, Type> getTypeEnvironment(
 			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
-		if (initialTypeEnvironment.getValue(this.variableName).equals(new IntType()) == false) {
+		if (!initialTypeEnvironment.getValue(this.variableName).equals(new IntType())) {
 			throw new InvalidTypeException("ReadFileStatement: " + this.variableName + " is not an integer");
 		}
-		if (this.filePath.typeCheck(initialTypeEnvironment).equals(new StringType()) == false) {
+		if (!this.filePath.typeCheck(initialTypeEnvironment).equals(new StringType())) {
 			throw new InvalidTypeException("ReadFileStatement: file path should be a stringValue");
 		}
 		return initialTypeEnvironment;

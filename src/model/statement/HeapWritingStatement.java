@@ -23,13 +23,13 @@ public class HeapWritingStatement implements Statement {
 	public ProgramState execute(ProgramState crtState) throws Exception {
 		DictionaryInterface<String, ValueInterface> symbolTable = crtState.getSymbolTable();
 		DictionaryInterface<Integer, ValueInterface> heap = crtState.getHeap();
-		if (symbolTable.isDefined(this.variableName) == false) {
+		if (!symbolTable.isDefined(this.variableName)) {
 			throw new UndefinedVariableException("HeapWritingStatement: " + this.variableName + " is not defined in the symbol table");
 		}
 		
 		ValueInterface variableValue = symbolTable.getValue(this.variableName);
 		int positionInHeap = ((ReferenceValue)variableValue).getHeapAddress();
-		if (heap.isDefined(positionInHeap) == false) {
+		if (!heap.isDefined(positionInHeap)) {
 			throw new UndefinedVariableException("HeapWritingStatement: Undefined variable at address 0x" + Integer.toHexString(positionInHeap));
 		}
 		
@@ -53,7 +53,7 @@ public class HeapWritingStatement implements Statement {
 		// the type of the reference that "variableName" is allocated to
 		// if getValue does not return a ReferenceValue, the equals will fail; it will also fail if the inner types don't match
 		// so we're doing both checks simultaneously
-		if (initialTypeEnvironment.getValue(this.variableName).equals(expressionReferenceType) == false) {
+		if (!initialTypeEnvironment.getValue(this.variableName).equals(expressionReferenceType)) {
 			throw new InvalidTypeException("HeapWritingStatement: Expression cannot be evaluated to a " + expressionReferenceType.toString());
 		}
 		return initialTypeEnvironment;

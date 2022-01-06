@@ -25,7 +25,7 @@ public class HeapAllocationStatement implements Statement {
 		DictionaryInterface<String, ValueInterface> symbolTable = crtState.getSymbolTable();
 		DictionaryInterface<Integer, ValueInterface> heap = crtState.getHeap();
 		
-		if (symbolTable.isDefined(this.variableName) == false) {
+		if (!symbolTable.isDefined(this.variableName)) {
 			throw new UndefinedVariableException("HeapAllocationStatement: " + this.variableName + " is not defined in the symbol table");
 		}
 		
@@ -54,7 +54,7 @@ public class HeapAllocationStatement implements Statement {
 		// the type of the reference that "variableName" is allocated to
 		// if getValue does not return a ReferenceValue, the equals will fail; it will also fail if the inner types don't match
 		// so we're doing both checks simultaneously
-		if (initialTypeEnvironment.getValue(this.variableName).equals(expressionReferenceType) == false) {
+		if (!initialTypeEnvironment.getValue(this.variableName).equals(expressionReferenceType)) {
 			throw new InvalidTypeException("HeapAllocationStatement: Expression cannot be evaluated to a " + expressionReferenceType.toString());
 		}
 		return initialTypeEnvironment;

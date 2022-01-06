@@ -28,7 +28,7 @@ public class CloseReadFileStatement implements Statement {
 		
 		// we know filePathValue is a StringValue, we can cast
 		String filePathString = ((StringValue)filePathValue).getValue();
-		if (fileTable.isDefined((StringValue)filePathValue) == false) {
+		if (!fileTable.isDefined((StringValue) filePathValue)) {
 			throw new UndefinedVariableException("CloseReadFileStatement: File path " + filePathString + " is not defined in the file table");
 		}
 		
@@ -49,7 +49,7 @@ public class CloseReadFileStatement implements Statement {
 	@Override
 	public DictionaryInterface<String, Type> getTypeEnvironment(
 			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
-		if (this.filePath.typeCheck(initialTypeEnvironment).equals(new StringType()) == false) {
+		if (!this.filePath.typeCheck(initialTypeEnvironment).equals(new StringType())) {
 			throw new InvalidTypeException("CloseReadFileStatement: file path should be a stringValue");
 		}
 		return initialTypeEnvironment;

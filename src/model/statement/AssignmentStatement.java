@@ -22,7 +22,7 @@ public class AssignmentStatement implements Statement {
 		DictionaryInterface<String, ValueInterface> symbolTable = crtState.getSymbolTable();
 		DictionaryInterface<Integer, ValueInterface> heap = crtState.getHeap();
 		
-		if (symbolTable.isDefined(this.variableName) == false) {
+		if (!symbolTable.isDefined(this.variableName)) {
 			throw new UndefinedVariableException("AssignmentStatement: Variable " + this.variableName + " is not defined");
 		}
 		
@@ -42,7 +42,7 @@ public class AssignmentStatement implements Statement {
 	@Override
 	public DictionaryInterface<String, Type> getTypeEnvironment(
 			DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
-		if (initialTypeEnvironment.getValue(this.variableName).equals(this.expression.typeCheck(initialTypeEnvironment)) == false) {
+		if (!initialTypeEnvironment.getValue(this.variableName).equals(this.expression.typeCheck(initialTypeEnvironment))) {
 			throw new InvalidTypeException("AssignmentStatement: type of "+ this.variableName + " doesn't match the expression's type");
 		}
 		return initialTypeEnvironment; // the type environment remains unchanged
