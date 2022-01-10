@@ -181,9 +181,6 @@ public class GUI extends Application {
 			if (newValue == null || newValue < 0) {
 				// by doing this we reduce the possibility of not having a thread selected at a time, which did occur frequently for some reason
 				ProgramState firstAvailableThread = controller.getFirstAvailableThread();
-				if (firstAvailableThread == null) {
-					; // what happens if there are no threads left ?
-				}
 				newValue = firstAvailableThread.getThreadID();
 			}
 
@@ -409,6 +406,8 @@ public class GUI extends Application {
 		
 		primaryStage.setMinWidth(this.MINIMUM_MAIN_WINDOW_WIDTH);
 		primaryStage.setMinHeight(this.MINIMUM_MAIN_WINDOW_HEIGHT);
+		primaryStage.setMaxHeight(600);
+		primaryStage.setMaxWidth(400);
 		primaryStage.setTitle("Interpreter");
         primaryStage.setScene(this.createMainScene());
         primaryStage.show();

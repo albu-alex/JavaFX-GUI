@@ -29,7 +29,7 @@ import model.value.IntValue;
 import model.value.StringValue;
 
 public class AllExamples {
-	private final String SRC_FOLDER_PATH = "D:\\Cursuri\\alexm\\IdeaProjects\\JavaFX-GUI";
+	private final String SRC_FOLDER_PATH = "C:\\Users\\alexm\\IdeaProjects\\JavaFX-GUI";
 	
 	private Statement composeStatement(MyList<Statement> crtList){
 		if (crtList.size() == 0) {
