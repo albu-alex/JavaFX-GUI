@@ -47,8 +47,8 @@ public class GUI extends Application {
 	private Button selectExampleButton;
 	private ComboBox<Example> exampleComboBox;
 	
-	private final int MINIMUM_MAIN_WINDOW_WIDTH = 700; // in pixels
-	private final int MINIMUM_MAIN_WINDOW_HEIGHT = 300; // in pixels
+	private final int MINIMUM_MAIN_WINDOW_WIDTH = 600; // in pixels
+	private final int MINIMUM_MAIN_WINDOW_HEIGHT = 200; // in pixels
 	private final int UPPER_LAYOUT_GAP = 10;
 	private final int MAXIMUM_PROGRAM_STATE_COUNT_FIELD_WIDTH = 120;
 	private final int MAXIMUM_THREAD_LIST_VIEW_WIDTH = MAXIMUM_PROGRAM_STATE_COUNT_FIELD_WIDTH;
