@@ -26,14 +26,9 @@ import java.util.Objects;
 
 public class GUI extends Application {
 	private GUIController controller;
-	
-	// I store the actual thread and not the threadID because I won't have to repeatedly call getThreadByID, which can prove costly,
-	// especially in the tableViews, where it has to be called for each row
-	// on the other hand, the size of a ProgramState is not too large (around 7 bytes)
+
 	private ProgramState selectedThread;
-	
-	// here I need the actual value of the thread ID because selecting from this list affects the program
-	// selecting from the output, filetable etc does not affect the program, so I'll just display the string
+
 	private ListView<Integer> threadListView; 
 	private ListView<String> outputListView;
 	private ListView<String> fileTableListView;
@@ -47,8 +42,8 @@ public class GUI extends Application {
 	private Button selectExampleButton;
 	private ComboBox<Example> exampleComboBox;
 	
-	private final int MINIMUM_MAIN_WINDOW_WIDTH = 700; // in pixels
-	private final int MINIMUM_MAIN_WINDOW_HEIGHT = 300; // in pixels
+	private final int MINIMUM_MAIN_WINDOW_WIDTH = 600; // in pixels
+	private final int MINIMUM_MAIN_WINDOW_HEIGHT = 200; // in pixels
 	private final int UPPER_LAYOUT_GAP = 10;
 	private final int MAXIMUM_PROGRAM_STATE_COUNT_FIELD_WIDTH = 120;
 	private final int MAXIMUM_THREAD_LIST_VIEW_WIDTH = MAXIMUM_PROGRAM_STATE_COUNT_FIELD_WIDTH;
@@ -149,7 +144,7 @@ public class GUI extends Application {
 	
 	public void beforeProgramExecution() {
 		this.updateAllStructures();
-		this.selectExampleButton.setDisable(true); // deactivate the select example button and the example combo box
+		this.selectExampleButton.setDisable(true);
 		this.exampleComboBox.setDisable(true);
 		this.advanceOneStepButton.setDisable(false);
 		this.fullProgramExecutionButton.setDisable(false);
@@ -158,7 +153,7 @@ public class GUI extends Application {
 	public void afterProgramExecution() {
 		this.updateThreadListView();
 		this.programStateCountTextField.setText("Threads: 0");
-		this.selectExampleButton.setDisable(false); // re-activate / reset the select example button and the example combo box
+		this.selectExampleButton.setDisable(false);
 		this.exampleComboBox.setDisable(false);
 		this.exampleComboBox.getSelectionModel().clearSelection();
 		this.advanceOneStepButton.setDisable(true);
@@ -181,9 +176,6 @@ public class GUI extends Application {
 			if (newValue == null || newValue < 0) {
 				// by doing this we reduce the possibility of not having a thread selected at a time, which did occur frequently for some reason
 				ProgramState firstAvailableThread = controller.getFirstAvailableThread();
-				if (firstAvailableThread == null) {
-					; // what happens if there are no threads left ?
-				}
 				newValue = firstAvailableThread.getThreadID();
 			}
 
@@ -217,15 +209,15 @@ public class GUI extends Application {
 	}
 	
 	private void initialiseOutputListView() {
-		this.outputListView = new ListView<String>();
+		this.outputListView = new ListView<>();
 		this.outputListView.setMaxWidth(Double.MAX_VALUE);
 	}
 	
 	private void initialiseHeapTableTableView() {
-		this.heapTableView = new TableView<Integer>();
+		this.heapTableView = new TableView<>();
 		this.heapTableView.setEditable(false);
 		
-		TableColumn<Integer, String> variableAddressColumn = new TableColumn<Integer, String>("Variable address");
+		TableColumn<Integer, String> variableAddressColumn = new TableColumn<>("Variable address");
 		variableAddressColumn.prefWidthProperty().bind(this.heapTableView.widthProperty().multiply(this.COLUMN_WIDTH_AS_PERCENTAGE_OF_TOTAL_TABLE_WIDTH));
 		// this approach should only be used as long as the table is non-editable (which it is in this app)
 		variableAddressColumn.setCellValueFactory(currentReference -> new ReadOnlyStringWrapper("0x" + Integer.toHexString(currentReference.getValue())));
@@ -409,6 +401,8 @@ public class GUI extends Application {
 		
 		primaryStage.setMinWidth(this.MINIMUM_MAIN_WINDOW_WIDTH);
 		primaryStage.setMinHeight(this.MINIMUM_MAIN_WINDOW_HEIGHT);
+		primaryStage.setMaxHeight(600);
+		primaryStage.setMaxWidth(400);
 		primaryStage.setTitle("Interpreter");
         primaryStage.setScene(this.createMainScene());
         primaryStage.show();

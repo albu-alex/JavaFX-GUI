@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PuyaInterpreter.iml" filepath="$PROJECT_DIR$/PuyaInterpreter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/guiInterpreter.iml" filepath="$PROJECT_DIR$/guiInterpreter.iml" />
     </modules>
   </component>
 </project>

@@ -323,3 +323,253 @@ OutputTable:
 50
 
 Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+openRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+int a;
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+closeRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+int a;
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+closeRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+
+SymbolTable:
+
+FileTable:
+C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in -> java.io.BufferedReader@2748a340
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int a;
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+closeRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+
+SymbolTable:
+
+FileTable:
+C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in -> java.io.BufferedReader@2748a340
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+closeRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+
+SymbolTable:
+a -> 0
+
+FileTable:
+C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in -> java.io.BufferedReader@2748a340
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+closeRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+
+SymbolTable:
+a -> 0
+
+FileTable:
+C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in -> java.io.BufferedReader@2748a340
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+print (a);
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+closeRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+
+SymbolTable:
+a -> 15
+
+FileTable:
+C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in -> java.io.BufferedReader@2748a340
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (a);
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+closeRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+
+SymbolTable:
+a -> 15
+
+FileTable:
+C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in -> java.io.BufferedReader@2748a340
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+closeRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+
+SymbolTable:
+a -> 15
+
+FileTable:
+C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in -> java.io.BufferedReader@2748a340
+
+OutputTable:
+15
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+readFile(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+print (a);
+closeRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+
+SymbolTable:
+a -> 15
+
+FileTable:
+C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in -> java.io.BufferedReader@2748a340
+
+OutputTable:
+15
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+print (a);
+closeRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+
+SymbolTable:
+a -> 50
+
+FileTable:
+C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in -> java.io.BufferedReader@2748a340
+
+OutputTable:
+15
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (a);
+closeRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+
+SymbolTable:
+a -> 50
+
+FileTable:
+C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in -> java.io.BufferedReader@2748a340
+
+OutputTable:
+15
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+closeRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+
+SymbolTable:
+a -> 50
+
+FileTable:
+C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in -> java.io.BufferedReader@2748a340
+
+OutputTable:
+15
+50
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+closeRead(C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in);
+
+SymbolTable:
+a -> 50
+
+FileTable:
+C:\Users\alexm\IdeaProjects\JavaFX-GUI\example4.in -> java.io.BufferedReader@2748a340
+
+OutputTable:
+15
+50
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+a -> 50
+
+FileTable:
+
+OutputTable:
+15
+50
+
+Heap:
