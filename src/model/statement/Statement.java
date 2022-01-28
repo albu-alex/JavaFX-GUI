@@ -5,7 +5,7 @@ import model.ADT.DictionaryInterface;
 import model.type.Type;
 
 public interface Statement {
-	public ProgramState execute(ProgramState crtState) throws Exception;
-	public DictionaryInterface<String, Type> getTypeEnvironment(DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception;
-	public String toString();
+	ProgramState execute(ProgramState crtState) throws Exception;
+	DictionaryInterface<String, Type> getTypeEnvironment(DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception;
+	String toString();
 }
