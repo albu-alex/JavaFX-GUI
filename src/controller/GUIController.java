@@ -35,8 +35,13 @@ public class GUIController extends Controller {
 		DictionaryInterface<String, Type> typeEnvironment = new MyDictionary<>();
 		DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> semaphoreTable = new MyLockTable<>();
 		DictionaryInterface<Integer, Integer> lockTable = new MyLockTable<>();
+		DictionaryInterface<Integer, Integer> latchTable = new MyLockTable<>();
 		currentExample.getStatement().getTypeEnvironment(typeEnvironment);
-		return new ProgramState(stack, symbolTable, output, fileTable, heap, semaphoreTable, lockTable, currentExample.getStatement());
+		return new ProgramState(stack, symbolTable, output, fileTable, heap,
+				semaphoreTable,
+				lockTable,
+				latchTable,
+				currentExample.getStatement());
 	}
 	
 	@Override

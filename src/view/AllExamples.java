@@ -328,7 +328,7 @@ public class AllExamples {
 	}
 
 	public Example getExample15(){
-		MyList<Statement> statementList = new MyList<Statement>();
+		MyList<Statement> statementList = new MyList<>();
 
 		statementList.addLast(new VariableDeclarationStatement("v1", new ReferenceType(new IntType())));
 		statementList.addLast(new VariableDeclarationStatement("v2", new ReferenceType(new IntType())));
@@ -375,6 +375,46 @@ public class AllExamples {
 
 		return new Example(this.composeStatement(statementList), "normal lock", this.SRC_FOLDER_PATH + "\\log15.in");
 	}
+	public Example getExample16(){
+		MyList<Statement> statementList = new MyList<>();
+
+		statementList.addLast(new VariableDeclarationStatement("v1", new ReferenceType(new IntType())));
+		statementList.addLast(new VariableDeclarationStatement("v2", new ReferenceType(new IntType())));
+		statementList.addLast(new VariableDeclarationStatement("v3", new ReferenceType(new IntType())));
+		statementList.addLast(new VariableDeclarationStatement("cnt", new IntType()));
+		statementList.addLast(new HeapAllocationStatement("v1", new ValueExpression(new IntValue(2))));
+		statementList.addLast(new HeapAllocationStatement("v2", new ValueExpression(new IntValue(3))));
+		statementList.addLast(new HeapAllocationStatement("v3", new ValueExpression(new IntValue(4))));
+		statementList.addLast(new CreateLatchStatement("cnt", new HeapReadingExpression(new VariableExpression("v2"))));
+
+		MyList<Statement> thread2StatementList = new MyList<>();
+		thread2StatementList.addLast(new HeapWritingStatement("v1", new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(10)), "*")));
+		thread2StatementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("v1"))));
+		thread2StatementList.addLast(new CountDownLatchStatement("cnt"));
+
+		MyList<Statement> thread3StatementList = new MyList<>();
+		thread3StatementList.addLast(new HeapWritingStatement("v2", new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v2")), new ValueExpression(new IntValue(10)), "*")));
+		thread3StatementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("v2"))));
+		thread3StatementList.addLast(new CountDownLatchStatement("cnt"));
+
+		MyList<Statement> thread4StatementList = new MyList<>();
+		thread4StatementList.addLast(new HeapWritingStatement("v3", new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v3")), new ValueExpression(new IntValue(10)), "*")));
+		thread4StatementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("v3"))));
+		thread4StatementList.addLast(new CountDownLatchStatement("cnt"));
+		thread3StatementList.addLast(new ForkStatement(this.composeStatement(thread4StatementList)));
+		thread2StatementList.addLast(new ForkStatement(this.composeStatement(thread3StatementList)));
+
+		statementList.addLast(new ForkStatement(this.composeStatement(thread2StatementList)));
+		statementList.addLast(new AwaitLatchStatement("cnt"));
+		statementList.addLast(new PrintStatement(new ValueExpression(new IntValue(100))));
+		statementList.addLast(new CountDownLatchStatement("cnt"));
+		statementList.addLast(new PrintStatement(new ValueExpression(new IntValue(100))));
+
+		return new Example(this.composeStatement(statementList), "Ref int v1; Ref int v2; Ref int v3; int cnt; " +
+				"new(v1,2); new(v2,3); new(v3,4); newLatch(cnt,rH(v2)); fork(wh(v1,rh(v1)*10); print(rh(v1)); countDown(cnt);); " +
+				"fork(wh(v2,rh(v2)*10); print(rh(v2)); countDown(cnt);); fork(wh(v3,rh(v3)*10); print(rh(v3)); countDown(cnt);); " +
+				"await(cnt); print(100); countDown(cnt); print(100);", this.SRC_FOLDER_PATH + "\\log16.in");
+	}
 	
 	public MyList<Example> getAllExamples() {
 		MyList<Example> exampleList = new MyList<>();
@@ -394,6 +434,7 @@ public class AllExamples {
 		exampleList.addLast(getExample13());
 		exampleList.addLast(getExample14());
 		exampleList.addLast(getExample15());
+		exampleList.addLast(getExample16());
 
 		return exampleList;
 	}

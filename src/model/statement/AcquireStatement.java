@@ -67,11 +67,11 @@ public class AcquireStatement implements Statement{
     @Override
     public DictionaryInterface<String, Type> getTypeEnvironment(
             DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
-        if (!initialTypeEnvironment.isDefined(this.indexVariableName)) {
+        if (!initialTypeEnvironment.isDefined(indexVariableName)) {
             throw new UndefinedVariableException("AcquirePermitStatement: Variable " + this.indexVariableName + " is not defined in the typeEnvironment");
         }
-        if (!initialTypeEnvironment.getValue(this.indexVariableName).equals(new IntType())) {
-            throw new InvalidTypeException("AcquirePermitStatement: Variable " + this.indexVariableName + " is not an integer");
+        if (!initialTypeEnvironment.getValue(indexVariableName).equals(new IntType())) {
+            throw new InvalidTypeException("AcquirePermitStatement: Variable " + indexVariableName + " is not an integer");
         }
         return initialTypeEnvironment;
     }

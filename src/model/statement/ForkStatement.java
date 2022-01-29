@@ -29,6 +29,7 @@ public class ForkStatement implements Statement {
 		return new ProgramState(stack, symbolTable, parentThread.getOutput(), parentThread.getFileTable(), parentThread.getHeap(),
 				parentThread.getSemaphoreTable(),
 				parentThread.getLockTable(),
+				parentThread.getLatchTable(),
 				this.threadStatements);
 	}
 	
