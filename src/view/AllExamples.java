@@ -310,6 +310,27 @@ public class AllExamples {
 		return new Example(this.composeStatement(statementList), "conditional assignment", this.SRC_FOLDER_PATH + "\\log13.in");
 	}
 
+	public Example getExample14() {
+		MyList<Statement> statementList = new MyList<>();
+
+		// for(int v = 4; v > 0; v--) {print(v);}
+		statementList.addLast(new ForStatement(
+				"v",
+				new ValueExpression(new IntValue(4)),
+				new RelationalExpression(
+						new VariableExpression("v"),
+						new ValueExpression(new IntValue(0)),
+						">"),
+				new AssignmentStatement("v",
+						new ArithmeticExpression(
+								new VariableExpression("v"),
+								new ValueExpression(new IntValue(1)),
+								"-"
+						)),
+				new PrintStatement(new VariableExpression("v"))
+		));
+		return new Example(this.composeStatement(statementList), "for(int v = 4; v > 0; v--) {print(v);}", this.SRC_FOLDER_PATH + "\\log14.in");
+	}
 	
 	public MyList<Example> getAllExamples() {
 		MyList<Example> exampleList = new MyList<>();
