@@ -438,6 +438,32 @@ public class AllExamples {
 
 		return new Example(this.composeStatement(statementList), "switch", this.SRC_FOLDER_PATH + "\\log17.in");
 	}
+
+	public Example getExample18(){
+		MyList<Statement> statementList = new MyList<>();
+
+		// int v; v = 0; repeat {fork(print(v); v--;); v++;} until (v == 3); int x; x = 1; print(v * 10);
+		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
+		statementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(0))));
+		statementList.addLast(new RepeatUntilStatement(
+				new CompoundStatement(
+						new ForkStatement(new CompoundStatement(
+								new PrintStatement(new VariableExpression("v")),
+								new IncrementStatement("v", "-"))),
+						new IncrementStatement("v", "+")),
+				new RelationalExpression(new VariableExpression("v"), new ValueExpression(new IntValue(3)), "==")));
+		statementList.addLast(new VariableDeclarationStatement("x", new IntType()));
+		statementList.addLast(new AssignmentStatement("x", new ValueExpression(new IntValue(1))));
+		statementList.addLast(new VariableDeclarationStatement("y", new IntType()));
+		statementList.addLast(new AssignmentStatement("y", new ValueExpression(new IntValue(2))));
+		statementList.addLast(new VariableDeclarationStatement("z", new IntType()));
+		statementList.addLast(new AssignmentStatement("z", new ValueExpression(new IntValue(3))));
+		statementList.addLast(new VariableDeclarationStatement("w", new IntType()));
+		statementList.addLast(new AssignmentStatement("w", new ValueExpression(new IntValue(4))));
+		statementList.addLast(new PrintStatement(new ArithmeticExpression(new VariableExpression("v"), new ValueExpression(new IntValue(10)), "*")));
+
+		return new Example(this.composeStatement(statementList), "int v; v = 0; repeat {fork(print(v); v--;); v++;} until (v == 3); int x; x = 1; print(v * 10);", this.SRC_FOLDER_PATH + "\\log18.in");
+	}
 	
 	public MyList<Example> getAllExamples() {
 		MyList<Example> exampleList = new MyList<>();
@@ -459,6 +485,7 @@ public class AllExamples {
 		exampleList.addLast(getExample15());
 		exampleList.addLast(getExample16());
 		exampleList.addLast(getExample17());
+		exampleList.addLast(getExample18());
 
 		return exampleList;
 	}

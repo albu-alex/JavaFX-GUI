@@ -53,10 +53,10 @@ public class AwaitLatchStatement implements Statement{
     public DictionaryInterface<String, Type> getTypeEnvironment(
             DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
         if(!initialTypeEnvironment.isDefined(indexVariableName)){
-            throw new UndefinedVariableException("AcquirePermitStatement: Variable " + this.indexVariableName + " is not defined in the typeEnvironment");
+            throw new UndefinedVariableException("AwaitStatement: Variable " + this.indexVariableName + " is not defined in the typeEnvironment");
         }
         if(!initialTypeEnvironment.getValue(indexVariableName).equals(new IntType())){
-            throw new InvalidTypeException("AcquirePermitStatement: Variable " + this.indexVariableName + " is not an integer");
+            throw new InvalidTypeException("AwaitStatement: Variable " + this.indexVariableName + " is not an integer");
         }
         return initialTypeEnvironment;
     }
