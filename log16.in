@@ -2133,3 +2133,2138 @@ Heap:
 1 -> 20
 2 -> 30
 3 -> 40
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v1;
+Ref(int) v2;
+Ref(int) v3;
+int cnt;
+new(v1, 2);
+new(v2, 3);
+new(v3, 4);
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v2;
+Ref(int) v3;
+int cnt;
+new(v1, 2);
+new(v2, 3);
+new(v3, 4);
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v2;
+Ref(int) v3;
+int cnt;
+new(v1, 2);
+new(v2, 3);
+new(v3, 4);
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v3;
+int cnt;
+new(v1, 2);
+new(v2, 3);
+new(v3, 4);
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v3;
+int cnt;
+new(v1, 2);
+new(v2, 3);
+new(v3, 4);
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+int cnt;
+new(v1, 2);
+new(v2, 3);
+new(v3, 4);
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+v3 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int cnt;
+new(v1, 2);
+new(v2, 3);
+new(v3, 4);
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+v3 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 2);
+new(v2, 3);
+new(v3, 4);
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+v3 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 2);
+new(v2, 3);
+new(v3, 4);
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+v3 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v2, 3);
+new(v3, 4);
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+v2 -> (0x0, int)
+v3 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v2, 3);
+new(v3, 4);
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+v2 -> (0x0, int)
+v3 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v3, 4);
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+2 -> 3
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v3, 4);
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+2 -> 3
+
+======== ThreadID: 1========
+ExecutionStack:
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+2 -> 3
+3 -> 4
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+createLatch(cnt, *(v2));
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+2 -> 3
+3 -> 4
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+2 -> 3
+3 -> 4
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+)
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+2 -> 3
+3 -> 4
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+2 -> 3
+3 -> 4
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+2 -> 3
+3 -> 4
+
+======== ThreadID: 2========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+2 -> 3
+3 -> 4
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== ThreadID: 2========
+ExecutionStack:
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== ThreadID: 2========
+ExecutionStack:
+print (*(v1));
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== ThreadID: 2========
+ExecutionStack:
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== ThreadID: 2========
+ExecutionStack:
+countDownLatch(cnt);
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== ThreadID: 2========
+ExecutionStack:
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== ThreadID: 2========
+ExecutionStack:
+fork
+(
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v2) = *(v2) * 10;
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== ThreadID: 3========
+ExecutionStack:
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== ThreadID: 3========
+ExecutionStack:
+print (*(v2));
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== ThreadID: 3========
+ExecutionStack:
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== ThreadID: 3========
+ExecutionStack:
+countDownLatch(cnt);
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== ThreadID: 3========
+ExecutionStack:
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== ThreadID: 3========
+ExecutionStack:
+fork
+(
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+)
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== ThreadID: 4========
+ExecutionStack:
+*(v3) = *(v3) * 10;
+print (*(v3));
+countDownLatch(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 4
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== ThreadID: 4========
+ExecutionStack:
+print (*(v3));
+countDownLatch(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== ThreadID: 4========
+ExecutionStack:
+print (*(v3));
+countDownLatch(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== ThreadID: 4========
+ExecutionStack:
+countDownLatch(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== ThreadID: 4========
+ExecutionStack:
+countDownLatch(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+(latch) 4
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== ThreadID: 4========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+(latch) 4
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+(latch) 4
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== ThreadID: 1========
+ExecutionStack:
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+(latch) 4
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (100);
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+(latch) 4
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== ThreadID: 1========
+ExecutionStack:
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+(latch) 4
+100
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+countDownLatch(cnt);
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+(latch) 4
+100
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== ThreadID: 1========
+ExecutionStack:
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+(latch) 4
+100
+(latch) 1
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (100);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+(latch) 4
+100
+(latch) 1
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 2
+30
+(latch) 3
+40
+(latch) 4
+100
+(latch) 1
+100
+
+Heap:
+1 -> 20
+2 -> 30
+3 -> 40

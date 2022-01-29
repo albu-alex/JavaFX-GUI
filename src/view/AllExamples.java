@@ -2,11 +2,7 @@ package view;
 
 import model.Example;
 import model.ADT.MyList;
-import model.expression.ArithmeticExpression;
-import model.expression.HeapReadingExpression;
-import model.expression.RelationalExpression;
-import model.expression.ValueExpression;
-import model.expression.VariableExpression;
+import model.expression.*;
 import model.statement.*;
 import model.type.BoolType;
 import model.type.IntType;
@@ -14,6 +10,9 @@ import model.type.ReferenceType;
 import model.value.BoolValue;
 import model.value.IntValue;
 import model.value.StringValue;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class AllExamples {
 	private final String SRC_FOLDER_PATH = "D:\\Cursuri\\MAP_Projects\\fourth_homework\\interpreter";
@@ -415,6 +414,30 @@ public class AllExamples {
 				"fork(wh(v2,rh(v2)*10); print(rh(v2)); countDown(cnt);); fork(wh(v3,rh(v3)*10); print(rh(v3)); countDown(cnt);); " +
 				"await(cnt); print(100); countDown(cnt); print(100);", this.SRC_FOLDER_PATH + "\\log16.in");
 	}
+	public Example getExample17(){
+		MyList<Statement> statementList = new MyList<>();
+
+		statementList.addLast(new VariableDeclarationStatement("a", new IntType()));
+		statementList.addLast(new VariableDeclarationStatement("b", new IntType()));
+		statementList.addLast(new VariableDeclarationStatement("c", new IntType()));
+		statementList.addLast(new AssignmentStatement("a", new ValueExpression(new IntValue(1))));
+		statementList.addLast(new AssignmentStatement("b", new ValueExpression(new IntValue(2))));
+		statementList.addLast(new AssignmentStatement("c", new ValueExpression(new IntValue(5))));
+
+		ArrayList<Expression> caseExpressionList = new ArrayList<Expression>(Arrays.asList(
+				new ArithmeticExpression(new VariableExpression("b"), new VariableExpression("c"), "*"),
+				new ValueExpression(new IntValue(10))));
+		ArrayList<Statement> caseStatementList = new ArrayList<Statement>(Arrays.asList(
+				new CompoundStatement(new PrintStatement(new VariableExpression("a")), new PrintStatement(new VariableExpression("b"))),
+				new CompoundStatement(new PrintStatement(new ValueExpression(new IntValue(100))), new PrintStatement(new ValueExpression(new IntValue(200)))),
+				new PrintStatement(new ValueExpression(new IntValue(300)))));
+		statementList.addLast(new SwitchStatement(new ArithmeticExpression(new VariableExpression("a"), new ValueExpression(new IntValue(10)), "*"),
+				caseExpressionList,
+				caseStatementList));
+		statementList.addLast(new PrintStatement(new ValueExpression(new IntValue(300))));
+
+		return new Example(this.composeStatement(statementList), "switch", this.SRC_FOLDER_PATH + "\\log17.in");
+	}
 	
 	public MyList<Example> getAllExamples() {
 		MyList<Example> exampleList = new MyList<>();
@@ -435,6 +458,7 @@ public class AllExamples {
 		exampleList.addLast(getExample14());
 		exampleList.addLast(getExample15());
 		exampleList.addLast(getExample16());
+		exampleList.addLast(getExample17());
 
 		return exampleList;
 	}
