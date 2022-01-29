@@ -28,6 +28,7 @@ public class ForkStatement implements Statement {
 		DictionaryInterface<String, ValueInterface> symbolTable = parentThread.getSymbolTable().clone();
 		return new ProgramState(stack, symbolTable, parentThread.getOutput(), parentThread.getFileTable(), parentThread.getHeap(),
 				parentThread.getSemaphoreTable(),
+				parentThread.getLockTable(),
 				this.threadStatements);
 	}
 	

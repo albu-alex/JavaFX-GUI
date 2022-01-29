@@ -324,7 +324,56 @@ public class AllExamples {
 				new IncrementStatement("v", "-"),
 				new PrintStatement(new VariableExpression("v"))
 		));
-		return new Example(this.composeStatement(statementList), "for(int v = 4; v > 0; v--) {print(v);}", this.SRC_FOLDER_PATH + "\\log14.in");
+		return new Example(composeStatement(statementList), "for(int v = 4; v > 0; v--) {print(v);}", this.SRC_FOLDER_PATH + "\\log14.in");
+	}
+
+	public Example getExample15(){
+		MyList<Statement> statementList = new MyList<Statement>();
+
+		statementList.addLast(new VariableDeclarationStatement("v1", new ReferenceType(new IntType())));
+		statementList.addLast(new VariableDeclarationStatement("v2", new ReferenceType(new IntType())));
+		statementList.addLast(new VariableDeclarationStatement("x", new IntType()));
+		statementList.addLast(new VariableDeclarationStatement("q", new IntType()));
+		statementList.addLast(new HeapAllocationStatement("v1", new ValueExpression(new IntValue(20))));
+		statementList.addLast(new HeapAllocationStatement("v2", new ValueExpression(new IntValue(30))));
+		statementList.addLast(new CreateLockStatement("x"));
+
+		MyList<Statement> thread2StatementList = new MyList<>();
+		MyList<Statement> thread3StatementList = new MyList<>();
+		thread3StatementList.addLast(new LockStatement("x"));
+		thread3StatementList.addLast(new HeapWritingStatement("v1", new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(1)), "-")));
+		thread3StatementList.addLast(new UnlockStatement("x"));
+		thread2StatementList.addLast(new ForkStatement(this.composeStatement(thread3StatementList)));
+		thread2StatementList.addLast(new LockStatement("x"));
+		thread2StatementList.addLast(new HeapWritingStatement("v1", new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(10)), "*")));
+		thread2StatementList.addLast(new UnlockStatement("x"));
+		statementList.addLast(new ForkStatement(this.composeStatement(thread2StatementList)));
+
+		statementList.addLast(new CreateLockStatement("q"));
+
+		MyList<Statement> thread4StatementList = new MyList<>();
+		MyList<Statement> thread5StatementList = new MyList<>();
+		thread5StatementList.addLast(new LockStatement("q"));
+		thread5StatementList.addLast(new HeapWritingStatement("v2", new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v2")), new ValueExpression(new IntValue(5)), "+")));
+		thread5StatementList.addLast(new UnlockStatement("q"));
+		thread4StatementList.addLast(new ForkStatement(this.composeStatement(thread5StatementList)));
+		thread4StatementList.addLast(new LockStatement("q"));
+		thread4StatementList.addLast(new HeapWritingStatement("v2", new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v2")), new ValueExpression(new IntValue(10)), "*")));
+		thread4StatementList.addLast(new UnlockStatement("q"));
+		statementList.addLast(new ForkStatement(this.composeStatement(thread4StatementList)));
+
+		statementList.addLast(new EmptyStatement());
+		statementList.addLast(new EmptyStatement());
+		statementList.addLast(new EmptyStatement());
+		statementList.addLast(new EmptyStatement());
+		statementList.addLast(new LockStatement("x"));
+		statementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("v1"))));
+		statementList.addLast(new UnlockStatement("x"));
+		statementList.addLast(new LockStatement("q"));
+		statementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("v2"))));
+		statementList.addLast(new UnlockStatement("q"));
+
+		return new Example(this.composeStatement(statementList), "normal lock", this.SRC_FOLDER_PATH + "\\log15.in");
 	}
 	
 	public MyList<Example> getAllExamples() {
@@ -344,6 +393,7 @@ public class AllExamples {
 		exampleList.addLast(getExample12());
 		exampleList.addLast(getExample13());
 		exampleList.addLast(getExample14());
+		exampleList.addLast(getExample15());
 
 		return exampleList;
 	}

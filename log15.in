@@ -1,0 +1,6675 @@
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v1;
+Ref(int) v2;
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v2;
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v2;
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+x -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+x -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x1, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x1, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 1========
+ExecutionStack:
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 3========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 3========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 3========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 4========
+ExecutionStack:
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 3========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 4========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 3========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 4========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 5========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 3========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 4========
+ExecutionStack:
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 5========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 3========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 4========
+ExecutionStack:
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 5========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 300
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 300
+
+======== ThreadID: 4========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 300
+
+======== ThreadID: 5========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 300
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 300
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 300
+
+======== ThreadID: 4========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 300
+
+======== ThreadID: 5========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 300
+
+======== ThreadID: 1========
+ExecutionStack:
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 3========
+ExecutionStack:
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 4========
+ExecutionStack:
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 5========
+ExecutionStack:
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 3========
+ExecutionStack:
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 5========
+ExecutionStack:
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 1========
+ExecutionStack:
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 5========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 5========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 5========
+ExecutionStack:
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 1========
+ExecutionStack:
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 1========
+ExecutionStack:
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 1========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+305
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+305
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+305
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v1;
+Ref(int) v2;
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v2;
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v2;
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+x -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+x -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x1, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x1, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 1========
+ExecutionStack:
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 3========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 4========
+ExecutionStack:
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 3========
+ExecutionStack:
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 4========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 3========
+ExecutionStack:
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 4========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 5========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 4========
+ExecutionStack:
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 5========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 2========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 4========
+ExecutionStack:
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 5========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 30
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 300
+
+======== ThreadID: 2========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 300
+
+======== ThreadID: 4========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 300
+
+======== ThreadID: 5========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 300
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 300
+
+======== ThreadID: 2========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 300
+
+======== ThreadID: 4========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 300
+
+======== ThreadID: 5========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 19
+2 -> 300
+
+======== ThreadID: 1========
+ExecutionStack:
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 300
+
+======== ThreadID: 2========
+ExecutionStack:
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 300
+
+======== ThreadID: 4========
+ExecutionStack:
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 300
+
+======== ThreadID: 5========
+ExecutionStack:
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 300
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 300
+
+======== ThreadID: 2========
+ExecutionStack:
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 300
+
+======== ThreadID: 5========
+ExecutionStack:
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 300
+
+======== ThreadID: 1========
+ExecutionStack:
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== ThreadID: 5========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== ThreadID: 5========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== ThreadID: 5========
+ExecutionStack:
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== ThreadID: 1========
+ExecutionStack:
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+190
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+190
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== ThreadID: 1========
+ExecutionStack:
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+190
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+190
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+190
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+190
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== ThreadID: 1========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+190
+305
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+190
+305
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+190
+305
+
+Heap:
+1 -> 190
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+Ref(int) v1;
+Ref(int) v2;
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 6========
+ExecutionStack:
+Ref(int) v2;
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+Ref(int) v2;
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 6========
+ExecutionStack:
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+int x;
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 6========
+ExecutionStack:
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+x -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+int q;
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+x -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 6========
+ExecutionStack:
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+new(v1, 20);
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x0, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 6========
+ExecutionStack:
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x1, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+new(v2, 30);
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x1, int)
+v2 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 6========
+ExecutionStack:
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+createLock(x);
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 0
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 6========
+ExecutionStack:
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+fork
+(
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+)
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 6========
+ExecutionStack:
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+createLock(q);
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 7========
+ExecutionStack:
+fork
+(
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+)
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 6========
+ExecutionStack:
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 7========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+fork
+(
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+)
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 7========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 8========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 6========
+ExecutionStack:
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 7========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 8========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+empty_statement
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 7========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 8========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 9========
+ExecutionStack:
+fork
+(
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+)
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+2 -> 30
+
+======== ThreadID: 6========
+ExecutionStack:
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 7========
+ExecutionStack:
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 8========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 9========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+empty_statement
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 7========
+ExecutionStack:
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 8========
+ExecutionStack:
+lock(x);
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 9========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 10========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 6========
+ExecutionStack:
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 7========
+ExecutionStack:
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 8========
+ExecutionStack:
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 9========
+ExecutionStack:
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 10========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+empty_statement
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 8========
+ExecutionStack:
+*(v1) = *(v1) - 1;
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 9========
+ExecutionStack:
+*(v2) = *(v2) * 10;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 10========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 200
+2 -> 30
+
+======== ThreadID: 6========
+ExecutionStack:
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 8========
+ExecutionStack:
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 9========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 10========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+empty_statement
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 8========
+ExecutionStack:
+unlock(x);
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 9========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 10========
+ExecutionStack:
+lock(q);
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 6========
+ExecutionStack:
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 8========
+ExecutionStack:
+
+SymbolTable:
+q -> 0
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 9========
+ExecutionStack:
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 10========
+ExecutionStack:
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+lock(x);
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 10========
+ExecutionStack:
+*(v2) = *(v2) + 5;
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 300
+
+======== ThreadID: 6========
+ExecutionStack:
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 10========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+print (*(v1));
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 10========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 6========
+ExecutionStack:
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 10========
+ExecutionStack:
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+unlock(x);
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 6========
+ExecutionStack:
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+lock(q);
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 6========
+ExecutionStack:
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+print (*(v2));
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 6========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+305
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== New step ========
+
+======== ThreadID: 6========
+ExecutionStack:
+unlock(q);
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+305
+
+Heap:
+1 -> 199
+2 -> 305
+
+======== ThreadID: 6========
+ExecutionStack:
+
+SymbolTable:
+q -> 3
+x -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+
+FileTable:
+
+OutputTable:
+199
+305
+
+Heap:
+1 -> 199
+2 -> 305
