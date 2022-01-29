@@ -1,11 +1,15 @@
 package model.statement;
 
+import javafx.util.Pair;
+import model.ADT.MyLockTable;
 import model.ProgramState;
 import model.ADT.DictionaryInterface;
 import model.ADT.MyStack;
 import model.ADT.StackInterface;
 import model.type.Type;
 import model.value.ValueInterface;
+
+import java.util.ArrayList;
 
 public class ForkStatement implements Statement {
 	private final Statement threadStatements;
@@ -20,9 +24,11 @@ public class ForkStatement implements Statement {
 			return null;
 		}
 		
-		StackInterface<Statement> stack = new MyStack<Statement>();
+		StackInterface<Statement> stack = new MyStack<>();
 		DictionaryInterface<String, ValueInterface> symbolTable = parentThread.getSymbolTable().clone();
-		return new ProgramState(stack, symbolTable, parentThread.getOutput(), parentThread.getFileTable(), parentThread.getHeap(), this.threadStatements);
+		return new ProgramState(stack, symbolTable, parentThread.getOutput(), parentThread.getFileTable(), parentThread.getHeap(),
+				parentThread.getSemaphoreTable(),
+				this.threadStatements);
 	}
 	
 	@Override

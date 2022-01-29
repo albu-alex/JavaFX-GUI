@@ -19,6 +19,9 @@ import model.statement.OpenReadFileStatement;
 import model.statement.PrintStatement;
 import model.statement.ReadFileStatement;
 import model.statement.Statement;
+import model.statement.SemaphoreStatement;
+import model.statement.AcquireStatement;
+import model.statement.ReleaseStatement;
 import model.statement.VariableDeclarationStatement;
 import model.statement.WhileStatement;
 import model.type.BoolType;
@@ -29,7 +32,7 @@ import model.value.IntValue;
 import model.value.StringValue;
 
 public class AllExamples {
-	private final String SRC_FOLDER_PATH = "C:\\Users\\alexm\\IdeaProjects\\JavaFX-GUI";
+	private final String SRC_FOLDER_PATH = "D:\\Cursuri\\MAP_Projects\\fourth_homework\\interpreter";
 	
 	private Statement composeStatement(MyList<Statement> crtList){
 		if (crtList.size() == 0) {
@@ -254,6 +257,42 @@ public class AllExamples {
 		
 		return new Example(this.composeStatement(statementList), "int v; Ref int a; v=10; new(a,22); fork(wH(a,30); fork(v=33; print(v)); v=32; print(v); print(rH(a))); print(v); print(rH(a));", this.SRC_FOLDER_PATH + "\\log11.in");
 	}
+
+	public Example getExample12(){
+		MyList<Statement> statementList = new MyList<>();
+
+		statementList.addLast(new VariableDeclarationStatement("v1", new ReferenceType(new IntType())));
+		statementList.addLast(new VariableDeclarationStatement("cnt", new IntType()));
+		statementList.addLast(new HeapAllocationStatement("v1", new ValueExpression(new IntValue(2))));
+		statementList.addLast(new SemaphoreStatement("cnt", new HeapReadingExpression(new VariableExpression("v1"))));
+
+		MyList<Statement> firstFork = new MyList<>();
+
+		firstFork.addLast(new AcquireStatement("cnt"));
+		firstFork.addLast(new HeapWritingStatement("v1", new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(10)), "*")));
+		firstFork.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("v1"))));
+		firstFork.addLast(new ReleaseStatement("cnt"));
+		statementList.addLast(new ForkStatement(composeStatement(firstFork)));
+
+		MyList<Statement> secondFork = new MyList<>();
+
+		secondFork.addLast(new AcquireStatement("cnt"));
+		secondFork.addLast(new HeapWritingStatement("v1", new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(10)), "*")));
+		secondFork.addLast(new HeapWritingStatement("v1", new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(2)), "*")));
+		secondFork.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("v1"))));
+		secondFork.addLast(new ReleaseStatement("cnt"));
+		statementList.addLast(new ForkStatement(composeStatement(secondFork)));
+
+		statementList.addLast(new AcquireStatement("cnt"));
+		statementList.addLast(new PrintStatement(new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(1)), "-")));
+		statementList.addLast(new ReleaseStatement("cnt"));
+
+		return new Example(this.composeStatement(statementList), "Ref int v1; int cnt; new(v1,2); createSemaphore(cnt,rH(v1)); " +
+				"fork(acquire(cnt); wh(v1,rh(v1)*10)); print(rh(v1)); release(cnt)); " +
+				"fork(acquire(cnt); wh(v1,rh(v1)*10)); wh(v1,rh(v1)*2)); print(rh(v1)); release(cnt)); " +
+				"acquire(cnt); print(rh(v1)-1); release(cnt);", this.SRC_FOLDER_PATH + "\\log19.in");
+	}
+
 	
 	public MyList<Example> getAllExamples() {
 		MyList<Example> exampleList = new MyList<>();
@@ -269,6 +308,7 @@ public class AllExamples {
 		exampleList.addLast(this.getExample9());
 		exampleList.addLast(this.getExample10());
 		exampleList.addLast(this.getExample11());
+		exampleList.addLast(getExample12());
 
 		return exampleList;
 	}

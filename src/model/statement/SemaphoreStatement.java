@@ -21,7 +21,7 @@ public class SemaphoreStatement implements Statement{
     private final Expression totalPermitCountExpression;
     private static Lock lock = new ReentrantLock();
 
-    SemaphoreStatement(String indexVariableName, Expression totalPermitCountExpression){
+    public SemaphoreStatement(String indexVariableName, Expression totalPermitCountExpression){
         this.indexVariableName = indexVariableName;
         this.totalPermitCountExpression = totalPermitCountExpression;
     }

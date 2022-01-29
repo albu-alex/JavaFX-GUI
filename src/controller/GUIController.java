@@ -1,16 +1,13 @@
 package controller;
 
 import java.io.BufferedReader;
+import java.util.ArrayList;
 import java.util.List;
+
+import javafx.util.Pair;
+import model.ADT.*;
 import model.Example;
 import model.ProgramState;
-import model.ADT.DictionaryInterface;
-import model.ADT.ListInterface;
-import model.ADT.MyDictionary;
-import model.ADT.MyHeap;
-import model.ADT.MyList;
-import model.ADT.MyStack;
-import model.ADT.StackInterface;
 import model.statement.Statement;
 import model.type.Type;
 import model.value.StringValue;
@@ -29,15 +26,16 @@ public class GUIController extends Controller {
 	}
 
 	private ProgramState getProgramState(Example currentExample) throws Exception {
-		StackInterface<Statement> stack = new MyStack<Statement>();
-		DictionaryInterface<String, ValueInterface> symbolTable = new MyDictionary<String, ValueInterface>();
-		ListInterface<ValueInterface> output = new MyList<ValueInterface>();
-		DictionaryInterface<StringValue, BufferedReader> fileTable = new MyDictionary<StringValue, BufferedReader>();
-		DictionaryInterface<Integer, ValueInterface> heap = new MyHeap<Integer, ValueInterface>();
+		StackInterface<Statement> stack = new MyStack<>();
+		DictionaryInterface<String, ValueInterface> symbolTable = new MyDictionary<>();
+		ListInterface<ValueInterface> output = new MyList<>();
+		DictionaryInterface<StringValue, BufferedReader> fileTable = new MyDictionary<>();
+		DictionaryInterface<Integer, ValueInterface> heap = new MyHeap<>();
 		
-		DictionaryInterface<String, Type> typeEnvironment = new MyDictionary<String, Type>();
+		DictionaryInterface<String, Type> typeEnvironment = new MyDictionary<>();
+		DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> semaphoreTable = new MyLockTable<>();
 		currentExample.getStatement().getTypeEnvironment(typeEnvironment);
-		return new ProgramState(stack, symbolTable, output, fileTable, heap, currentExample.getStatement());
+		return new ProgramState(stack, symbolTable, output, fileTable, heap, semaphoreTable, currentExample.getStatement());
 	}
 	
 	@Override

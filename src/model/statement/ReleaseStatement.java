@@ -18,7 +18,7 @@ public class ReleaseStatement implements Statement {
     private final String indexVariableName;
     private static Lock lock = new ReentrantLock();
 
-    ReleaseStatement(String indexVariableName){
+    public ReleaseStatement(String indexVariableName){
         this.indexVariableName = indexVariableName;
     }
 
