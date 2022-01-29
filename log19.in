@@ -1,0 +1,3762 @@
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v1;
+int cnt;
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+int cnt;
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int cnt;
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 2========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 2========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 2========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 1========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 200
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 200
+
+======== ThreadID: 3========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 400
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+1 -> 400
+
+======== ThreadID: 3========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+400
+
+Heap:
+1 -> 400
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+400
+
+Heap:
+1 -> 400
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+400
+
+Heap:
+1 -> 400
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v1;
+int cnt;
+new(v1, 1);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+int cnt;
+new(v1, 1);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int cnt;
+new(v1, 1);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 1);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 1);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+
+======== ThreadID: 2========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+
+======== ThreadID: 2========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+
+======== ThreadID: 2========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 10
+
+======== ThreadID: 2========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 10
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 10
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 10
+
+======== ThreadID: 2========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 10
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 10
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== ThreadID: 2========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== ThreadID: 2========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+
+Heap:
+1 -> 10
+
+======== ThreadID: 1========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+
+Heap:
+1 -> 10
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+
+Heap:
+1 -> 10
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+
+Heap:
+1 -> 10
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+
+Heap:
+1 -> 10
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+
+Heap:
+1 -> 10
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+
+Heap:
+1 -> 10
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+
+Heap:
+1 -> 10
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+
+Heap:
+1 -> 100
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+
+Heap:
+1 -> 100
+
+======== ThreadID: 3========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+
+Heap:
+1 -> 200
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+
+Heap:
+1 -> 200
+
+======== ThreadID: 3========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+200
+
+Heap:
+1 -> 200
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+200
+
+Heap:
+1 -> 200
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+10
+9
+200
+
+Heap:
+1 -> 200
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v1;
+int cnt;
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+int cnt;
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int cnt;
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 2========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 2========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 2========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 1========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 200
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 200
+
+======== ThreadID: 3========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 400
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 400
+
+======== ThreadID: 3========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+400
+
+Heap:
+1 -> 400
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+400
+
+Heap:
+1 -> 400
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+400
+
+Heap:
+1 -> 400
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) v1;
+int cnt;
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+int cnt;
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int cnt;
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+new(v1, 2);
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+semaphore(cnt, *(v1));
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 0
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+)
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+fork
+(
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+)
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 2========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 2========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+acquire(cnt);
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 2========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (*(v1) - 1);
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 20
+
+======== ThreadID: 1========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+acquire(cnt);
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 10;
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 20
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 200
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+*(v1) = *(v1) * 2;
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 200
+
+======== ThreadID: 3========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 400
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+print (*(v1));
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+
+Heap:
+1 -> 400
+
+======== ThreadID: 3========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+400
+
+Heap:
+1 -> 400
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+release(cnt);
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+400
+
+Heap:
+1 -> 400
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+
+FileTable:
+
+OutputTable:
+20
+19
+400
+
+Heap:
+1 -> 400

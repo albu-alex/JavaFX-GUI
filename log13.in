@@ -1,0 +1,622 @@
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) a;
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+*(a) = 1;
+*(b) = 2;
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+*(a) = 1;
+*(b) = 2;
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+Ref(int) b;
+int v;
+new(a, 0);
+new(b, 0);
+*(a) = 1;
+*(b) = 2;
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+int v;
+new(a, 0);
+new(b, 0);
+*(a) = 1;
+*(b) = 2;
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x0, int)
+b -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int v;
+new(a, 0);
+new(b, 0);
+*(a) = 1;
+*(b) = 2;
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x0, int)
+b -> (0x0, int)
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+new(a, 0);
+new(b, 0);
+*(a) = 1;
+*(b) = 2;
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x0, int)
+b -> (0x0, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+new(a, 0);
+new(b, 0);
+*(a) = 1;
+*(b) = 2;
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x0, int)
+b -> (0x0, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+new(b, 0);
+*(a) = 1;
+*(b) = 2;
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x0, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 0
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+new(b, 0);
+*(a) = 1;
+*(b) = 2;
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x0, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 0
+
+======== ThreadID: 1========
+ExecutionStack:
+*(a) = 1;
+*(b) = 2;
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 0
+2 -> 0
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+*(a) = 1;
+*(b) = 2;
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 0
+2 -> 0
+
+======== ThreadID: 1========
+ExecutionStack:
+*(b) = 2;
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+2 -> 0
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+*(b) = 2;
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+2 -> 0
+
+======== ThreadID: 1========
+ExecutionStack:
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = *(a) < *(b) ? 100 : 200print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+if (*(a) < *(b)) {
+	v = 100;
+}
+else {
+	v = 200;
+}
+print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+if (*(a) < *(b)) {
+	v = 100;
+}
+else {
+	v = 200;
+}
+print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+v = 100;
+print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = 100;
+print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 100
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 100
+
+FileTable:
+
+OutputTable:
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 100
+
+FileTable:
+
+OutputTable:
+100
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = *(b) - 2 > *(a) ? 100 : 200print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 100
+
+FileTable:
+
+OutputTable:
+100
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+if (*(b) - 2 > *(a)) {
+	v = 100;
+}
+else {
+	v = 200;
+}
+print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 100
+
+FileTable:
+
+OutputTable:
+100
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+if (*(b) - 2 > *(a)) {
+	v = 100;
+}
+else {
+	v = 200;
+}
+print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 100
+
+FileTable:
+
+OutputTable:
+100
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+v = 200;
+print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 100
+
+FileTable:
+
+OutputTable:
+100
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = 200;
+print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 100
+
+FileTable:
+
+OutputTable:
+100
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 200
+
+FileTable:
+
+OutputTable:
+100
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 200
+
+FileTable:
+
+OutputTable:
+100
+
+Heap:
+1 -> 1
+2 -> 2
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+a -> (0x1, int)
+b -> (0x2, int)
+v -> 200
+
+FileTable:
+
+OutputTable:
+100
+200
+
+Heap:
+1 -> 1
+2 -> 2

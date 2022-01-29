@@ -7,23 +7,7 @@ import model.expression.HeapReadingExpression;
 import model.expression.RelationalExpression;
 import model.expression.ValueExpression;
 import model.expression.VariableExpression;
-import model.statement.AssignmentStatement;
-import model.statement.CloseReadFileStatement;
-import model.statement.CompoundStatement;
-import model.statement.EmptyStatement;
-import model.statement.ForkStatement;
-import model.statement.HeapAllocationStatement;
-import model.statement.HeapWritingStatement;
-import model.statement.IfStatement;
-import model.statement.OpenReadFileStatement;
-import model.statement.PrintStatement;
-import model.statement.ReadFileStatement;
-import model.statement.Statement;
-import model.statement.SemaphoreStatement;
-import model.statement.AcquireStatement;
-import model.statement.ReleaseStatement;
-import model.statement.VariableDeclarationStatement;
-import model.statement.WhileStatement;
+import model.statement.*;
 import model.type.BoolType;
 import model.type.IntType;
 import model.type.ReferenceType;
@@ -290,7 +274,40 @@ public class AllExamples {
 		return new Example(this.composeStatement(statementList), "Ref int v1; int cnt; new(v1,2); createSemaphore(cnt,rH(v1)); " +
 				"fork(acquire(cnt); wh(v1,rh(v1)*10)); print(rh(v1)); release(cnt)); " +
 				"fork(acquire(cnt); wh(v1,rh(v1)*10)); wh(v1,rh(v1)*2)); print(rh(v1)); release(cnt)); " +
-				"acquire(cnt); print(rh(v1)-1); release(cnt);", this.SRC_FOLDER_PATH + "\\log19.in");
+				"acquire(cnt); print(rh(v1)-1); release(cnt);", this.SRC_FOLDER_PATH + "\\log12.in");
+	}
+
+	public Example getExample13(){
+		MyList<Statement> statementList = new MyList<>();
+
+		statementList.addLast(new VariableDeclarationStatement("a", new ReferenceType(new IntType())));
+		statementList.addLast(new VariableDeclarationStatement("b", new ReferenceType(new IntType())));
+		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
+		statementList.addLast(new HeapAllocationStatement("a", new ValueExpression(new IntValue(0))));
+		statementList.addLast(new HeapAllocationStatement("b", new ValueExpression(new IntValue(0))));
+		statementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(1))));
+		statementList.addLast(new HeapWritingStatement("b", new ValueExpression(new IntValue(2))));
+		statementList.addLast(new ConditionalAssignmentStatement("v",
+				new RelationalExpression(
+						new HeapReadingExpression(new VariableExpression("a")),
+						new HeapReadingExpression(new VariableExpression("b")),
+						"<"),
+				new ValueExpression(new IntValue(100)),
+				new ValueExpression(new IntValue(200))));
+		statementList.addLast(new PrintStatement(new VariableExpression("v")));
+		statementList.addLast(new ConditionalAssignmentStatement("v",
+				new RelationalExpression(
+						new ArithmeticExpression(
+								new HeapReadingExpression(new VariableExpression("b")),
+								new ValueExpression(new IntValue(2)),
+								"-"),
+						new HeapReadingExpression(new VariableExpression("a")),
+						">"),
+				new ValueExpression(new IntValue(100)),
+				new ValueExpression(new IntValue(200))));
+		statementList.addLast(new PrintStatement(new VariableExpression("v")));
+
+		return new Example(this.composeStatement(statementList), "conditional assignment", this.SRC_FOLDER_PATH + "\\log13.in");
 	}
 
 	
@@ -309,6 +326,7 @@ public class AllExamples {
 		exampleList.addLast(this.getExample10());
 		exampleList.addLast(this.getExample11());
 		exampleList.addLast(getExample12());
+		exampleList.addLast(getExample13());
 
 		return exampleList;
 	}
