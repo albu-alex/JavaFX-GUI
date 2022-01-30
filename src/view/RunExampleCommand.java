@@ -38,11 +38,13 @@ public class RunExampleCommand extends Command {
 		DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> semaphoreTable = new MyLockTable<>();
 		DictionaryInterface<Integer, Integer> lockTable = new MyLockTable<>();
 		DictionaryInterface<Integer, Integer> latchTable = new MyLockTable<>();
+		DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> barrierTable = new MyLockTable<>();
 		this.crtStatement.getTypeEnvironment(typeEnvironment);
 		ProgramState crtProgramState = new ProgramState(stack, symbolTable, output, fileTable, heap,
 				semaphoreTable,
 				lockTable,
 				latchTable,
+				barrierTable,
 				this.crtStatement);
 		
 		RepositoryInterface repo = new Repository(this.repositoryLocation);

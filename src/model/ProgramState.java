@@ -21,6 +21,7 @@ public class ProgramState {
 	private DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> semaphoreTable;
 	private DictionaryInterface<Integer, Integer> lockTable;
 	private DictionaryInterface<Integer, Integer> latchTable;
+	private DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> barrierTable;
 	private Statement originalProgram;
 	private static int globalThreadCount = 1;
 	private final int threadID;
@@ -34,6 +35,7 @@ public class ProgramState {
 			DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> semaphoreTable,
 			DictionaryInterface<Integer, Integer> lockTable,
 			DictionaryInterface<Integer, Integer> latchTable,
+			DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> barrierTable,
 			Statement program
 			) {
 		this.executionStack = stack;
@@ -44,6 +46,7 @@ public class ProgramState {
 		this.semaphoreTable = semaphoreTable;
 		this.lockTable = lockTable;
 		this.latchTable = latchTable;
+		this.barrierTable = barrierTable;
 		//this.originalProgram = program.deepCopy();
 		this.setStatement(program);
 		this.threadID = ProgramState.manageThreadID();
@@ -89,6 +92,10 @@ public class ProgramState {
 
 	public DictionaryInterface<Integer, Integer> getLatchTable(){
 		return latchTable;
+	}
+
+	public DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> getBarrierTable(){
+		return barrierTable;
 	}
 	
 	public Statement getOriginalProgram() {

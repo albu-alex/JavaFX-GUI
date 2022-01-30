@@ -30,6 +30,7 @@ public class ForkStatement implements Statement {
 				parentThread.getSemaphoreTable(),
 				parentThread.getLockTable(),
 				parentThread.getLatchTable(),
+				parentThread.getBarrierTable(),
 				this.threadStatements);
 	}
 	

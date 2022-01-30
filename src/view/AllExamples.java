@@ -482,6 +482,37 @@ public class AllExamples {
 
 		return new Example(this.composeStatement(statementList), "sleep", this.SRC_FOLDER_PATH + "\\log19.in");
 	}
+
+	public Example getExample20(){
+		MyList<Statement> statementList = new MyList<>();
+
+		statementList.addLast(new VariableDeclarationStatement("v1", new ReferenceType(new IntType())));
+		statementList.addLast(new VariableDeclarationStatement("v2", new ReferenceType(new IntType())));
+		statementList.addLast(new VariableDeclarationStatement("v3", new ReferenceType(new IntType())));
+		statementList.addLast(new VariableDeclarationStatement("cnt", new IntType()));
+		statementList.addLast(new HeapAllocationStatement("v1", new ValueExpression(new IntValue(2))));
+		statementList.addLast(new HeapAllocationStatement("v2", new ValueExpression(new IntValue(3))));
+		statementList.addLast(new HeapAllocationStatement("v3", new ValueExpression(new IntValue(4))));
+		statementList.addLast(new CreateBarrierStatement("cnt", new HeapReadingExpression(new VariableExpression("v2"))));
+
+		MyList<Statement> thread2StatementList = new MyList<>();
+		thread2StatementList.addLast(new AwaitBarrierStatement("cnt"));
+		thread2StatementList.addLast(new HeapWritingStatement("v1", new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v1")), new ValueExpression(new IntValue(10)), "*")));
+		thread2StatementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("v1"))));
+		statementList.addLast(new ForkStatement(this.composeStatement(thread2StatementList)));
+
+		MyList<Statement> thread3StatementList = new MyList<>();
+		thread3StatementList.addLast(new AwaitBarrierStatement("cnt"));
+		thread3StatementList.addLast(new HeapWritingStatement("v2", new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v2")), new ValueExpression(new IntValue(10)), "*")));
+		thread3StatementList.addLast(new HeapWritingStatement("v2", new ArithmeticExpression(new HeapReadingExpression(new VariableExpression("v2")), new ValueExpression(new IntValue(10)), "*")));
+		thread3StatementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("v2"))));
+		statementList.addLast(new ForkStatement(this.composeStatement(thread3StatementList)));
+
+		statementList.addLast(new AwaitBarrierStatement("cnt"));
+		statementList.addLast(new PrintStatement(new HeapReadingExpression(new VariableExpression("v3"))));
+
+		return new Example(this.composeStatement(statementList), "barrier", this.SRC_FOLDER_PATH + "\\log20.in");
+	}
 	
 	public MyList<Example> getAllExamples() {
 		MyList<Example> exampleList = new MyList<>();
@@ -505,6 +536,7 @@ public class AllExamples {
 		exampleList.addLast(getExample17());
 		exampleList.addLast(getExample18());
 		exampleList.addLast(getExample19());
+		exampleList.addLast(getExample20());
 
 		return exampleList;
 	}
