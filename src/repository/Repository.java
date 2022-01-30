@@ -12,7 +12,7 @@ public class Repository implements RepositoryInterface{
 	private final String logFilePath;
 	
 	public Repository(String logFilePath) {
-		this.threadList = new ArrayList<ProgramState>();
+		this.threadList = new ArrayList<>();
 		this.logFilePath = logFilePath;
 	}
 
@@ -24,7 +24,7 @@ public class Repository implements RepositoryInterface{
 	@Override
 	public void logCompleteThreadListExecution(boolean beforeStep) throws Exception {
 		PrintWriter logFile = new PrintWriter(new BufferedWriter(new FileWriter(this.logFilePath, true)));
-		if (beforeStep == true) {
+		if (beforeStep) {
 			logFile.append("\n======== New step ========\n");
 		}
 		this.threadList.forEach(thread -> logFile.append(thread.toString()));

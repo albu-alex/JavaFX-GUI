@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class AllExamples {
-	private final String SRC_FOLDER_PATH = "D:\\Cursuri\\MAP_Projects\\fourth_homework\\interpreter";
+	private final String SRC_FOLDER_PATH = "C:\\Users\\alexm\\IdeaProjects\\JavaFX-GUI";
 	
 	private Statement composeStatement(MyList<Statement> crtList){
 		if (crtList.size() == 0) {
