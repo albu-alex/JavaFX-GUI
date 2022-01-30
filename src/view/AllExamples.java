@@ -2,11 +2,13 @@ package view;
 
 import model.Example;
 import model.ADT.MyList;
+import model.Procedure;
 import model.expression.*;
 import model.statement.*;
 import model.type.BoolType;
 import model.type.IntType;
 import model.type.ReferenceType;
+import model.type.Type;
 import model.value.BoolValue;
 import model.value.IntValue;
 import model.value.StringValue;
@@ -424,10 +426,10 @@ public class AllExamples {
 		statementList.addLast(new AssignmentStatement("b", new ValueExpression(new IntValue(2))));
 		statementList.addLast(new AssignmentStatement("c", new ValueExpression(new IntValue(5))));
 
-		ArrayList<Expression> caseExpressionList = new ArrayList<Expression>(Arrays.asList(
+		ArrayList<Expression> caseExpressionList = new ArrayList<>(Arrays.asList(
 				new ArithmeticExpression(new VariableExpression("b"), new VariableExpression("c"), "*"),
 				new ValueExpression(new IntValue(10))));
-		ArrayList<Statement> caseStatementList = new ArrayList<Statement>(Arrays.asList(
+		ArrayList<Statement> caseStatementList = new ArrayList<>(Arrays.asList(
 				new CompoundStatement(new PrintStatement(new VariableExpression("a")), new PrintStatement(new VariableExpression("b"))),
 				new CompoundStatement(new PrintStatement(new ValueExpression(new IntValue(100))), new PrintStatement(new ValueExpression(new IntValue(200)))),
 				new PrintStatement(new ValueExpression(new IntValue(300)))));
@@ -525,6 +527,52 @@ public class AllExamples {
 
 		return new Example(this.composeStatement(statementList), "wait", this.SRC_FOLDER_PATH + "\\log21.in");
 	}
+
+	public Example getExample22(){
+		MyList<Statement> statementList = new MyList<>();
+
+		MyList<Statement> procedure1StatementList = new MyList<>();
+		procedure1StatementList.addLast(new VariableDeclarationStatement("v", new IntType()));
+		procedure1StatementList.addLast(new AssignmentStatement("v", new ArithmeticExpression(new VariableExpression("a"), new VariableExpression("b"), "+")));
+		procedure1StatementList.addLast(new PrintStatement(new VariableExpression("v")));
+		ArrayList<Type> procedure1Types = new ArrayList<>(Arrays.asList(new IntType(), new IntType()));
+		ArrayList<String> procedure1Names = new ArrayList<>(Arrays.asList("a", "b"));
+		statementList.addLast(new CreateProcedureStatement("sum", new Procedure(procedure1Types, procedure1Names, this.composeStatement(procedure1StatementList))));
+
+		MyList<Statement> procedure2StatementList = new MyList<>();
+		procedure2StatementList.addLast(new VariableDeclarationStatement("v", new IntType()));
+		procedure2StatementList.addLast(new AssignmentStatement("v", new ArithmeticExpression(new VariableExpression("a"), new VariableExpression("b"), "*")));
+		procedure2StatementList.addLast(new PrintStatement(new VariableExpression("v")));
+		ArrayList<Type> procedure2Types = new ArrayList<>(Arrays.asList(new IntType(), new IntType()));
+		ArrayList<String> procedure2Names = new ArrayList<>(Arrays.asList("a", "b"));
+		statementList.addLast(new CreateProcedureStatement("product", new Procedure(procedure2Types, procedure2Names, this.composeStatement(procedure2StatementList))));
+
+		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
+		statementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(2))));
+		statementList.addLast(new VariableDeclarationStatement("w", new IntType()));
+		statementList.addLast(new AssignmentStatement("w", new ValueExpression(new IntValue(5))));
+		ArrayList<Expression> procedure1Call1Values = new ArrayList<>(Arrays.asList(
+				new ArithmeticExpression(new VariableExpression("v"), new ValueExpression(new IntValue(10)), "*"),
+				new VariableExpression("w")
+		));
+		statementList.addLast(new CallProcedureStatement("sum", procedure1Call1Values));
+		statementList.addLast(new PrintStatement(new VariableExpression("v")));
+
+		MyList<Statement> thread2StatementList = new MyList<>();
+		ArrayList<Expression> procedure2Call1Values = new ArrayList<>(Arrays.asList(
+				new VariableExpression("v"), new VariableExpression("w")));
+		thread2StatementList.addLast(new CallProcedureStatement("product", procedure2Call1Values));
+
+		MyList<Statement> thread3StatementList = new MyList<>();
+		ArrayList<Expression> procedure1Call2Values = new ArrayList<>(Arrays.asList(
+				new VariableExpression("v"), new VariableExpression("w")));
+		thread3StatementList.addLast(new CallProcedureStatement("sum", procedure1Call2Values));
+		thread2StatementList.addLast(new ForkStatement(this.composeStatement(thread3StatementList)));
+
+		statementList.addLast(new ForkStatement(this.composeStatement(thread2StatementList)));
+
+		return new Example(this.composeStatement(statementList), "procedure", this.SRC_FOLDER_PATH + "\\log22.in");
+	}
 	
 	public MyList<Example> getAllExamples() {
 		MyList<Example> exampleList = new MyList<>();
@@ -550,6 +598,7 @@ public class AllExamples {
 		exampleList.addLast(getExample19());
 		exampleList.addLast(getExample20());
 		exampleList.addLast(getExample21());
+		exampleList.addLast(getExample22());
 
 		return exampleList;
 	}

@@ -14,7 +14,7 @@ import model.value.ValueInterface;
 
 public class ProgramState {
 	private StackInterface<Statement> executionStack;
-	private DictionaryInterface<String, ValueInterface> symbolTable;
+	private StackInterface<DictionaryInterface<String, ValueInterface>> symbolTable;
 	private ListInterface<ValueInterface> output;
 	private DictionaryInterface<StringValue, BufferedReader> fileTable;
 	private DictionaryInterface<Integer, ValueInterface> heap;
@@ -22,13 +22,14 @@ public class ProgramState {
 	private DictionaryInterface<Integer, Integer> lockTable;
 	private DictionaryInterface<Integer, Integer> latchTable;
 	private DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> barrierTable;
+	private DictionaryInterface<String, Procedure> procedureTable;
 	private Statement originalProgram;
 	private static int globalThreadCount = 1;
 	private final int threadID;
 	
 	public ProgramState(
 			StackInterface<Statement> stack,
-			DictionaryInterface<String, ValueInterface> symbolTable, 
+			StackInterface<DictionaryInterface<String, ValueInterface>> symbolTable,
 			ListInterface<ValueInterface> output,
 			DictionaryInterface<StringValue, BufferedReader> fileTable,
 			DictionaryInterface<Integer, ValueInterface> heap,
@@ -36,6 +37,7 @@ public class ProgramState {
 			DictionaryInterface<Integer, Integer> lockTable,
 			DictionaryInterface<Integer, Integer> latchTable,
 			DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> barrierTable,
+			DictionaryInterface<String, Procedure> procedureTable,
 			Statement program
 			) {
 		this.executionStack = stack;
@@ -47,6 +49,7 @@ public class ProgramState {
 		this.lockTable = lockTable;
 		this.latchTable = latchTable;
 		this.barrierTable = barrierTable;
+		this.procedureTable = procedureTable;
 		//this.originalProgram = program.deepCopy();
 		this.setStatement(program);
 		this.threadID = ProgramState.manageThreadID();
@@ -65,9 +68,13 @@ public class ProgramState {
 	public StackInterface<Statement> getExecutionStack() {
 		return this.executionStack;
 	}
+
+	public StackInterface<DictionaryInterface<String, ValueInterface>> getSymbolTableStack() {
+		return symbolTable;
+	}
 	
 	public DictionaryInterface<String, ValueInterface> getSymbolTable() {
-		return this.symbolTable;
+		return symbolTable.top();
 	}
 	
 	public ListInterface<ValueInterface> getOutput() {
@@ -92,6 +99,10 @@ public class ProgramState {
 
 	public DictionaryInterface<Integer, Integer> getLatchTable(){
 		return latchTable;
+	}
+
+	public DictionaryInterface<String, Procedure> getProcedureTable(){
+		return procedureTable;
 	}
 
 	public DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> getBarrierTable(){

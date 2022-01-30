@@ -7,6 +7,7 @@ import java.util.List;
 import javafx.util.Pair;
 import model.ADT.*;
 import model.Example;
+import model.Procedure;
 import model.ProgramState;
 import model.statement.Statement;
 import model.type.Type;
@@ -27,7 +28,9 @@ public class GUIController extends Controller {
 
 	private ProgramState getProgramState(Example currentExample) throws Exception {
 		StackInterface<Statement> stack = new MyStack<>();
+		StackInterface<DictionaryInterface<String, ValueInterface>> symbolTableStack = new MyStack<>();
 		DictionaryInterface<String, ValueInterface> symbolTable = new MyDictionary<>();
+		symbolTableStack.push(symbolTable);
 		ListInterface<ValueInterface> output = new MyList<>();
 		DictionaryInterface<StringValue, BufferedReader> fileTable = new MyDictionary<>();
 		DictionaryInterface<Integer, ValueInterface> heap = new MyHeap<>();
@@ -37,12 +40,14 @@ public class GUIController extends Controller {
 		DictionaryInterface<Integer, Integer> lockTable = new MyLockTable<>();
 		DictionaryInterface<Integer, Integer> latchTable = new MyLockTable<>();
 		DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> barrierTable = new MyLockTable<>();
+		DictionaryInterface<String, Procedure> procedureTable = new MyDictionary<>();
 		currentExample.getStatement().getTypeEnvironment(typeEnvironment);
-		return new ProgramState(stack, symbolTable, output, fileTable, heap,
+		return new ProgramState(stack, symbolTableStack, output, fileTable, heap,
 				semaphoreTable,
 				lockTable,
 				latchTable,
 				barrierTable,
+				procedureTable,
 				currentExample.getStatement());
 	}
 	

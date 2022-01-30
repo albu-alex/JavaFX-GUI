@@ -25,12 +25,14 @@ public class ForkStatement implements Statement {
 		}
 		
 		StackInterface<Statement> stack = new MyStack<>();
-		DictionaryInterface<String, ValueInterface> symbolTable = parentThread.getSymbolTable().clone();
+		StackInterface<DictionaryInterface<String, ValueInterface>> symbolTable = new MyStack<>();
+		parentThread.getSymbolTableStack().forEach(symTbl -> symbolTable.push(symTbl.clone()));
 		return new ProgramState(stack, symbolTable, parentThread.getOutput(), parentThread.getFileTable(), parentThread.getHeap(),
 				parentThread.getSemaphoreTable(),
 				parentThread.getLockTable(),
 				parentThread.getLatchTable(),
 				parentThread.getBarrierTable(),
+				parentThread.getProcedureTable(),
 				this.threadStatements);
 	}
 	

@@ -1,0 +1,1194 @@
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+procedure sum(int a, int b)
+{
+int v;
+v = a + b;
+print (v);
+}
+procedure product(int a, int b)
+{
+int v;
+v = a * b;
+print (v);
+}
+int v;
+v = 2;
+int w;
+w = 5;
+sum(v * 10, w);
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+procedure product(int a, int b)
+{
+int v;
+v = a * b;
+print (v);
+}
+int v;
+v = 2;
+int w;
+w = 5;
+sum(v * 10, w);
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+procedure product(int a, int b)
+{
+int v;
+v = a * b;
+print (v);
+}
+int v;
+v = 2;
+int w;
+w = 5;
+sum(v * 10, w);
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+int v;
+v = 2;
+int w;
+w = 5;
+sum(v * 10, w);
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+int v;
+v = 2;
+int w;
+w = 5;
+sum(v * 10, w);
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+v = 2;
+int w;
+w = 5;
+sum(v * 10, w);
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+v = 2;
+int w;
+w = 5;
+sum(v * 10, w);
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+int w;
+w = 5;
+sum(v * 10, w);
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+int w;
+w = 5;
+sum(v * 10, w);
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+w = 5;
+sum(v * 10, w);
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+v -> 2
+w -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+w = 5;
+sum(v * 10, w);
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+v -> 2
+w -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+sum(v * 10, w);
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+sum(v * 10, w);
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+int v;
+v = a + b;
+print (v);
+return;
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+a -> 20
+b -> 5
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+int v;
+v = a + b;
+print (v);
+return;
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+a -> 20
+b -> 5
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+v = a + b;
+print (v);
+return;
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+a -> 20
+b -> 5
+v -> 0
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+v = a + b;
+print (v);
+return;
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+a -> 20
+b -> 5
+v -> 0
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v);
+return;
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+a -> 20
+b -> 5
+v -> 25
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v);
+return;
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+a -> 20
+b -> 5
+v -> 25
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+return;
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+a -> 20
+b -> 5
+v -> 25
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+return;
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+a -> 20
+b -> 5
+v -> 25
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+print (v);
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 2========
+ExecutionStack:
+fork
+(
+product(v, w);
+fork
+(
+sum(v, w);
+)
+)
+
+SymbolTable:
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+
+Heap:
+
+======== ThreadID: 2========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+product(v, w);
+fork
+(
+sum(v, w);
+)
+
+SymbolTable:
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+int v;
+v = a * b;
+print (v);
+return;
+fork
+(
+sum(v, w);
+)
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+int v;
+v = a * b;
+print (v);
+return;
+fork
+(
+sum(v, w);
+)
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+v = a * b;
+print (v);
+return;
+fork
+(
+sum(v, w);
+)
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 0
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+v = a * b;
+print (v);
+return;
+fork
+(
+sum(v, w);
+)
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 0
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+print (v);
+return;
+fork
+(
+sum(v, w);
+)
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 10
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+print (v);
+return;
+fork
+(
+sum(v, w);
+)
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 10
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+return;
+fork
+(
+sum(v, w);
+)
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 10
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+return;
+fork
+(
+sum(v, w);
+)
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 10
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+fork
+(
+sum(v, w);
+)
+
+SymbolTable:
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 3========
+ExecutionStack:
+fork
+(
+sum(v, w);
+)
+
+SymbolTable:
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+
+Heap:
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 4========
+ExecutionStack:
+sum(v, w);
+
+SymbolTable:
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+
+Heap:
+
+======== ThreadID: 4========
+ExecutionStack:
+int v;
+v = a + b;
+print (v);
+return;
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 4========
+ExecutionStack:
+int v;
+v = a + b;
+print (v);
+return;
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+
+Heap:
+
+======== ThreadID: 4========
+ExecutionStack:
+v = a + b;
+print (v);
+return;
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 0
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 4========
+ExecutionStack:
+v = a + b;
+print (v);
+return;
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 0
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+
+Heap:
+
+======== ThreadID: 4========
+ExecutionStack:
+print (v);
+return;
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 7
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 4========
+ExecutionStack:
+print (v);
+return;
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 7
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+
+Heap:
+
+======== ThreadID: 4========
+ExecutionStack:
+return;
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 7
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+7
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 4========
+ExecutionStack:
+return;
+
+SymbolTable:
+a -> 2
+b -> 5
+v -> 7
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+7
+
+Heap:
+
+======== ThreadID: 4========
+ExecutionStack:
+
+SymbolTable:
+v -> 2
+w -> 5
+
+FileTable:
+
+OutputTable:
+25
+2
+10
+7
+
+Heap:
