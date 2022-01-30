@@ -30,8 +30,8 @@ public class RunExampleCommand extends Command {
 	@Override
 	public void execute() throws Exception {
 		StackInterface<Statement> stack = new MyStack<>();
-		StackInterface<DictionaryInterface<String, ValueInterface>> symbolTableStack = new MyStack<DictionaryInterface<String,ValueInterface>>();
-		DictionaryInterface<String, ValueInterface> symbolTable = new MyDictionary<String, ValueInterface>();
+		StackInterface<DictionaryInterface<String, ValueInterface>> symbolTableStack = new MyStack<>();
+		DictionaryInterface<String, ValueInterface> symbolTable = new MyDictionary<>();
 		symbolTableStack.push(symbolTable);
 		ListInterface<ValueInterface> output = new MyList<>();
 		DictionaryInterface<StringValue, BufferedReader> fileTable = new MyDictionary<>();
