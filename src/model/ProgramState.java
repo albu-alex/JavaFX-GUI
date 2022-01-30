@@ -62,7 +62,7 @@ public class ProgramState {
 	}
 	
 	public int getThreadID() {
-		return this.threadID;
+		return threadID;
 	}
 	
 	public StackInterface<Statement> getExecutionStack() {
@@ -110,7 +110,7 @@ public class ProgramState {
 	}
 	
 	public Statement getOriginalProgram() {
-		return this.originalProgram;
+		return originalProgram;
 	}
 	
 	public void setStatement(Statement statement) {

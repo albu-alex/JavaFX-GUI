@@ -618,3 +618,623 @@ OutputTable:
 200
 
 Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+int v;
+v = 20;
+print (v);
+wait(10);
+print (v * 10);
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = 20;
+print (v);
+wait(10);
+print (v * 10);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = 20;
+print (v);
+wait(10);
+print (v * 10);
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+wait(10);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v);
+wait(10);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(10);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(10);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(9);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(9);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(8);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(8);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(7);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(7);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(6);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(6);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(5);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(5);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(4);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+5
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(4);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+5
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(3);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+5
+4
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(3);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+5
+4
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(2);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+5
+4
+3
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(2);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+5
+4
+3
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(1);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+5
+4
+3
+2
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(1);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+5
+4
+3
+2
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(0);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+wait(0);
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+print (v * 10);
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+v -> 20
+
+FileTable:
+
+OutputTable:
+20
+10
+9
+8
+7
+6
+5
+4
+3
+2
+1
+200
+
+Heap:

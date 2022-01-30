@@ -436,3 +436,458 @@ OutputTable:
 1
 
 Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+for (int v = 4; v > 0; v--) {
+	print (v);
+}
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = 4;
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+for (int v = 4; v > 0; v--) {
+	print (v);
+}
+
+SymbolTable:
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v = 4;
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v = 4;
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 4
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 4
+
+FileTable:
+
+OutputTable:
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v--;
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 4
+
+FileTable:
+
+OutputTable:
+4
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v--;
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 4
+
+FileTable:
+
+OutputTable:
+4
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 3
+
+FileTable:
+
+OutputTable:
+4
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 3
+
+FileTable:
+
+OutputTable:
+4
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v--;
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 3
+
+FileTable:
+
+OutputTable:
+4
+3
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v--;
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 3
+
+FileTable:
+
+OutputTable:
+4
+3
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+4
+3
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+4
+3
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v--;
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+4
+3
+2
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v--;
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 2
+
+FileTable:
+
+OutputTable:
+4
+3
+2
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+4
+3
+2
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+4
+3
+2
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+v--;
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+4
+3
+2
+1
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+v--;
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 1
+
+FileTable:
+
+OutputTable:
+4
+3
+2
+1
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+4
+3
+2
+1
+
+Heap:
+
+======== New step ========
+
+======== ThreadID: 1========
+ExecutionStack:
+while (v > 0) {
+	print (v);
+v--;
+}
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+4
+3
+2
+1
+
+Heap:
+
+======== ThreadID: 1========
+ExecutionStack:
+
+SymbolTable:
+v -> 0
+
+FileTable:
+
+OutputTable:
+4
+3
+2
+1
+
+Heap:
