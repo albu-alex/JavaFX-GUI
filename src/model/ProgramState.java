@@ -78,15 +78,15 @@ public class ProgramState {
 	}
 	
 	public ListInterface<ValueInterface> getOutput() {
-		return this.output;
+		return output;
 	}
 	
 	public DictionaryInterface<StringValue, BufferedReader> getFileTable() {
-		return this.fileTable;
+		return fileTable;
 	}
 	
 	public DictionaryInterface<Integer, ValueInterface> getHeap() {
-		return this.heap;
+		return heap;
 	}
 
 	public DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> getSemaphoreTable(){

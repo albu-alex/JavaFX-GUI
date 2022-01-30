@@ -40,7 +40,7 @@ public class GUI extends Application {
 	private Button advanceOneStepButton;
 	private Button fullProgramExecutionButton;
 	private Button selectExampleButton;
-	private ComboBox<Example> exampleComboBox;
+	private ListView<Example> exampleListView;
 	
 	private final int MINIMUM_MAIN_WINDOW_WIDTH = 600; // in pixels
 	private final int MINIMUM_MAIN_WINDOW_HEIGHT = 200; // in pixels
@@ -136,7 +136,7 @@ public class GUI extends Application {
 	public void beforeProgramExecution() {
 		this.updateAllStructures();
 		this.selectExampleButton.setDisable(true);
-		this.exampleComboBox.setDisable(true);
+		this.exampleListView.setDisable(true);
 		this.advanceOneStepButton.setDisable(false);
 		this.fullProgramExecutionButton.setDisable(false);
 	}
@@ -145,8 +145,8 @@ public class GUI extends Application {
 		this.updateThreadListView();
 		this.programStateCountTextField.setText("Threads: 0");
 		this.selectExampleButton.setDisable(false);
-		this.exampleComboBox.setDisable(false);
-		this.exampleComboBox.getSelectionModel().clearSelection();
+		this.exampleListView.setDisable(false);
+		this.exampleListView.getSelectionModel().clearSelection();
 		this.advanceOneStepButton.setDisable(true);
 		this.fullProgramExecutionButton.setDisable(true);
 	}
@@ -160,7 +160,7 @@ public class GUI extends Application {
 			// because the currentThread doesn't affect the program execution, just the content displayed in the GUI
 
 			// also, if I click on the ID that's already clicked, there's no use in updating anything
-			if (newValue.equals(oldValue)) {
+			if (newValue == oldValue) {
 				return;
 			}
 
@@ -276,16 +276,12 @@ public class GUI extends Application {
 	
 	private void initialiseAdvanceOneStepButton() {
 		this.advanceOneStepButton = new Button("One step");
-		this.advanceOneStepButton.setOnAction(new EventHandler<ActionEvent>() {
-			@Override
-            public void handle(ActionEvent event) {
-            	try {
-					controller.advanceOneStepAllThreads();
-				} 
-            	catch (Exception e) {
-					displayErrorMessage(e.getMessage());
-				}
-            }
+		this.advanceOneStepButton.setOnAction(event -> {
+			try {
+				controller.advanceOneStepAllThreads();
+			} catch (Exception e) {
+				displayErrorMessage(e.getMessage());
+			}
 		});
 		this.advanceOneStepButton.setDisable(true); // these buttons will be disabled until an example is selected
 		this.advanceOneStepButton.setMaxWidth(Double.MAX_VALUE);
@@ -330,11 +326,9 @@ public class GUI extends Application {
 	}
 	
 	private void initialiseExampleComboBox() {
-		this.exampleComboBox = new ComboBox<Example>();
-		this.exampleComboBox.setVisibleRowCount(2);
-		this.exampleComboBox.setMaxWidth(Double.MAX_VALUE);
-		this.exampleComboBox.setMaxHeight(100);
-		this.controller.getAllExamples().forEach(example -> exampleComboBox.getItems().add(example));
+		this.exampleListView = new ListView<>();
+		this.exampleListView.setMaxWidth(Double.MAX_VALUE);
+		this.controller.getAllExamples().forEach(example -> exampleListView.getItems().add(example));
 	}
 	
 	private void initialiseSelectExampleButton() {
@@ -342,14 +336,12 @@ public class GUI extends Application {
 		this.selectExampleButton.setOnAction(event -> {
 			try {
 				createSecondaryPage();
-				controller.loadProgramStateIntoRepository(exampleComboBox.getValue());
+				controller.loadProgramStateIntoRepository(exampleListView.getSelectionModel().getSelectedItem());
 			}
 			catch (Exception e) {
 				displayErrorMessage(e.getMessage());
-				return;
 			}
 
-			exampleComboBox.setPromptText("Program changing unavailable: a program is currently in execution");
 		});
 		this.selectExampleButton.setTooltip(new Tooltip("Only one program can be run at a time"));
 		this.selectExampleButton.setMaxWidth(Double.MAX_VALUE);
@@ -362,11 +354,11 @@ public class GUI extends Application {
 		this.initialiseExampleComboBox();
 		this.initialiseSelectExampleButton();
 		
-		HBox.setHgrow(this.exampleComboBox, Priority.ALWAYS);
+		HBox.setHgrow(this.exampleListView, Priority.ALWAYS);
 		HBox.setHgrow(this.selectExampleButton, Priority.ALWAYS);
 		HBox.setHgrow(upperLayout, Priority.ALWAYS);
 		
-		upperLayout.getChildren().addAll(this.exampleComboBox, this.selectExampleButton);
+		upperLayout.getChildren().addAll(this.exampleListView, this.selectExampleButton);
 		upperLayout.setId("upperLayout");
 		
 		return upperLayout;
