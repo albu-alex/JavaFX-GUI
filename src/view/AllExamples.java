@@ -513,6 +513,18 @@ public class AllExamples {
 
 		return new Example(this.composeStatement(statementList), "barrier", this.SRC_FOLDER_PATH + "\\log20.in");
 	}
+
+	public Example getExample21(){
+		MyList<Statement> statementList = new MyList<>();
+
+		statementList.addLast(new VariableDeclarationStatement("v", new IntType()));
+		statementList.addLast(new AssignmentStatement("v", new ValueExpression(new IntValue(20))));
+		statementList.addLast(new PrintStatement(new VariableExpression("v")));
+		statementList.addLast(new WaitStatement(new ValueExpression(new IntValue(10))));
+		statementList.addLast(new PrintStatement(new ArithmeticExpression(new VariableExpression("v"), new ValueExpression(new IntValue(10)), "*")));
+
+		return new Example(this.composeStatement(statementList), "wait", this.SRC_FOLDER_PATH + "\\log21.in");
+	}
 	
 	public MyList<Example> getAllExamples() {
 		MyList<Example> exampleList = new MyList<>();
@@ -537,6 +549,7 @@ public class AllExamples {
 		exampleList.addLast(getExample18());
 		exampleList.addLast(getExample19());
 		exampleList.addLast(getExample20());
+		exampleList.addLast(getExample21());
 
 		return exampleList;
 	}
