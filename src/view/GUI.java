@@ -50,16 +50,7 @@ public class GUI extends Application {
 	private final int MINIMUM_SELECT_EXAMPlE_BUTTON_WIDTH = 150;
 	private final int MAXIMUM_MAIN_STRUCTURES_LAYOUT_HEIGHT = 650;
 	private final double COLUMN_WIDTH_AS_PERCENTAGE_OF_TOTAL_TABLE_WIDTH = 0.5;
-	
-	/*
-	observer -> GUI
-		- it should have an "update" method, called as a response to "notify", which updates 
-			-> prg state + their count
-			-> heap, output, filetable
-			-> stack, symbol table (they also have to be updated when chagning the current selected thread)
-	subject (observable) -> controller
-		- it should have a "notify" method, called after each oneStep() 
-	*/
+
 	
 	private void displayErrorMessage(String message) {
 		Alert errorAlert = new Alert(AlertType.ERROR);
@@ -162,14 +153,14 @@ public class GUI extends Application {
 	
 	private void initialiseThreadListView() {
 		// should the threadList display all the threads (including those which are completed) ?
-		this.threadListView = new ListView<Integer>();
+		this.threadListView = new ListView<>();
 		this.threadListView.setMaxWidth(this.MAXIMUM_THREAD_LIST_VIEW_WIDTH);
 		this.threadListView.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
 			// It's no use to pass the currently selected thread to the controller (and back again to the GUI)
 			// because the currentThread doesn't affect the program execution, just the content displayed in the GUI
 
 			// also, if I click on the ID that's already clicked, there's no use in updating anything
-			if (newValue == oldValue) {
+			if (newValue.equals(oldValue)) {
 				return;
 			}
 
@@ -348,19 +339,17 @@ public class GUI extends Application {
 	
 	private void initialiseSelectExampleButton() {
 		this.selectExampleButton = new Button("Execute program");
-		this.selectExampleButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent event) {
-            	try {
-            		controller.loadProgramStateIntoRepository(exampleComboBox.getValue());
-				} 
-            	catch (Exception e) {
-					displayErrorMessage(e.getMessage());
-					return;
-				}
+		this.selectExampleButton.setOnAction(event -> {
+			try {
+				createSecondaryPage();
+				controller.loadProgramStateIntoRepository(exampleComboBox.getValue());
+			}
+			catch (Exception e) {
+				displayErrorMessage(e.getMessage());
+				return;
+			}
 
-            	exampleComboBox.setPromptText("Program changing unavailable: a program is currently in execution");
-            }
+			exampleComboBox.setPromptText("Program changing unavailable: a program is currently in execution");
 		});
 		this.selectExampleButton.setTooltip(new Tooltip("Only one program can be run at a time"));
 		this.selectExampleButton.setMaxWidth(Double.MAX_VALUE);
@@ -386,13 +375,39 @@ public class GUI extends Application {
 	private Scene createMainScene(){
 		Scene mainScene;
 		VBox mainLayout = new VBox(10);
-		
 		mainScene = new Scene(mainLayout);
 		mainLayout.setStyle("-fx-background-color: #999999");
 		mainScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("applicationStyle.css")).toExternalForm());
-		mainLayout.getChildren().addAll(this.createUpperLayout(), this.createExecuteAreaLayout(), this.createStructuresLayout());
+		mainLayout.getChildren().addAll(this.createUpperLayout());
 		
 		return mainScene;
+	}
+
+	private Scene createSecondaryScene(){
+		Scene mainScene;
+		VBox mainLayout = new VBox(10);
+
+		mainScene = new Scene(mainLayout);
+		mainLayout.setStyle("-fx-background-color: #999999");
+		mainScene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("applicationStyle.css")).toExternalForm());
+		mainLayout.getChildren().addAll(createExecuteAreaLayout(), createStructuresLayout());
+
+		return mainScene;
+	}
+
+	private void createSecondaryPage(){
+		class SecondStage extends Stage{
+			SecondStage(){
+				this.setTitle("Interpreter");
+				this.setMaxHeight(600);
+				this.setMaxWidth(400);
+				this.setMinHeight(MINIMUM_MAIN_WINDOW_HEIGHT);
+				this.setMinWidth(MINIMUM_MAIN_WINDOW_WIDTH);
+				this.setScene(createSecondaryScene());
+				this.show();
+			}
+		}
+		new SecondStage();
 	}
 	
 	@Override
