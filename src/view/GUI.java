@@ -33,6 +33,7 @@ public class GUI extends Application {
 	private ListView<String> outputListView;
 	private ListView<String> fileTableListView;
 	private ListView<String> stackListView;
+	private TableView<Integer> latchTableView;
 	private TableView<Integer> heapTableView; // here I need it to store Integers because that's the key of the Heap structure
 	private TableView<String> symbolTableTableView;
 	private TextField programStateCountTextField;
@@ -84,6 +85,16 @@ public class GUI extends Application {
 		this.threadListView.getItems().clear();
 		this.controller.getThreadList().forEach(thread -> this.threadListView.getItems().add(thread.getThreadID()));
 	}
+
+	private void updateLatchTableView(){
+		this.latchTableView.getItems().clear();
+		ProgramState firstAvailableThread = this.controller.getFirstAvailableThread();
+		if (firstAvailableThread == null) {
+			return ;
+		}
+
+		firstAvailableThread.getLatchTable().forEachKey(variableAddress -> latchTableView.getItems().add(variableAddress));
+	}
 	
 	private void updateHeapTableView() {
 		this.heapTableView.getItems().clear();
@@ -121,6 +132,7 @@ public class GUI extends Application {
 		this.updateHeapTableView();
 		this.updateOutputListView();
 		this.updateFileTableListView();
+		this.updateLatchTableView();
 	}
 	
 	public void updateAllStructures() {
@@ -226,6 +238,29 @@ public class GUI extends Application {
 		this.heapTableView.getColumns().add(variableValueColumn);
 		this.heapTableView.setMaxWidth(Double.MAX_VALUE);
 	}
+
+	private void initialiseLatchTableView() {
+		latchTableView = new TableView<>();
+		heapTableView.setEditable(false);
+
+		TableColumn<Integer, String> variableAddressColumn = new TableColumn<>("Location");
+		variableAddressColumn.prefWidthProperty().bind(latchTableView.widthProperty().multiply(this.COLUMN_WIDTH_AS_PERCENTAGE_OF_TOTAL_TABLE_WIDTH));
+		// this approach should only be used as long as the table is non-editable (which it is in this app)
+		variableAddressColumn.setCellValueFactory(currentReference -> new ReadOnlyStringWrapper(Integer.toString(currentReference.getValue())));
+
+		TableColumn<Integer, String> variableValueColumn = new TableColumn<>("Value");
+		variableValueColumn.prefWidthProperty().bind(latchTableView.widthProperty().multiply(this.COLUMN_WIDTH_AS_PERCENTAGE_OF_TOTAL_TABLE_WIDTH));
+		variableValueColumn.setCellValueFactory(currentReference -> {
+			if (this.selectedThread == null) {
+				return null;
+			}
+			return new ReadOnlyStringWrapper(this.selectedThread.getLatchTable().getValue(currentReference.getValue()).toString());
+		});
+
+		latchTableView.getColumns().add(variableAddressColumn);
+		latchTableView.getColumns().add(variableValueColumn);
+		latchTableView.setMaxWidth(Double.MAX_VALUE);
+	}
 	
 	private void initialiseFileTableListView() {
 		this.fileTableListView = new ListView<>();
@@ -244,6 +279,7 @@ public class GUI extends Application {
 		this.initialiseHeapTableTableView();
 		this.initialiseFileTableListView();
 		this.initialiseStackListView();
+		this.initialiseLatchTableView();
 	}
 	
 	private HBox createStructuresLayout() {
@@ -261,11 +297,12 @@ public class GUI extends Application {
 		HBox.setHgrow(this.outputListView, Priority.ALWAYS);
 		HBox.setHgrow(this.stackListView, Priority.ALWAYS);
 		HBox.setHgrow(this.fileTableListView, Priority.ALWAYS);
+		HBox.setHgrow(latchTableView, Priority.ALWAYS);
 		HBox.setHgrow(upperRightLayout, Priority.ALWAYS);
 		HBox.setHgrow(lowerRightLayout, Priority.ALWAYS);
 		HBox.setHgrow(rightLayout, Priority.ALWAYS);
 		
-		upperRightLayout.getChildren().addAll(this.symbolTableTableView, this.heapTableView, this.outputListView);
+		upperRightLayout.getChildren().addAll(this.symbolTableTableView, this.heapTableView, this.outputListView, latchTableView);
 		lowerRightLayout.getChildren().addAll(this.stackListView, this.fileTableListView);
 		rightLayout.getChildren().addAll(upperRightLayout, lowerRightLayout);
 		mainStructuresLayout.getChildren().addAll(this.threadListView, rightLayout);

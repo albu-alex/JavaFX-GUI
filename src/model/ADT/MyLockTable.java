@@ -1,5 +1,7 @@
 package model.ADT;
 
+//I created a new MyLockTable ADT that extends the MyDictionary ADT because the MyDictionary
+//implementation does not take into account synchronization between threads
 public class MyLockTable<TKey, TValue> extends MyDictionary<TKey, TValue> {
     int firstAvailablePosition = 1;
 

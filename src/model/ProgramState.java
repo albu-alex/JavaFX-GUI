@@ -20,7 +20,11 @@ public class ProgramState {
 	private DictionaryInterface<Integer, ValueInterface> heap;
 	private DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> semaphoreTable;
 	private DictionaryInterface<Integer, Integer> lockTable;
-	private DictionaryInterface<Integer, Integer> latchTable;
+	// integer - integer mapping
+	// latch table in program state
+	// implements the heap interface(dictionary)
+	// 2) a
+	private final DictionaryInterface<Integer, Integer> latchTable;
 	private DictionaryInterface<Integer, Pair<Integer, ArrayList<Integer>>> barrierTable;
 	private DictionaryInterface<String, Procedure> procedureTable;
 	private Statement originalProgram;
@@ -97,6 +101,7 @@ public class ProgramState {
 		return lockTable;
 	}
 
+	//latch table getter, needed for the latch statements
 	public DictionaryInterface<Integer, Integer> getLatchTable(){
 		return latchTable;
 	}

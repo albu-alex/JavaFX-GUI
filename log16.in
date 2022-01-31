@@ -2136,7 +2136,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 Ref(int) v1;
 Ref(int) v2;
@@ -2177,7 +2177,7 @@ OutputTable:
 
 Heap:
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 Ref(int) v2;
 Ref(int) v3;
@@ -2220,7 +2220,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 Ref(int) v2;
 Ref(int) v3;
@@ -2261,7 +2261,7 @@ OutputTable:
 
 Heap:
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 Ref(int) v3;
 int cnt;
@@ -2304,7 +2304,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 Ref(int) v3;
 int cnt;
@@ -2345,7 +2345,7 @@ OutputTable:
 
 Heap:
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 int cnt;
 new(v1, 2);
@@ -2388,7 +2388,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 int cnt;
 new(v1, 2);
@@ -2429,7 +2429,7 @@ OutputTable:
 
 Heap:
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 new(v1, 2);
 new(v2, 3);
@@ -2472,7 +2472,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 new(v1, 2);
 new(v2, 3);
@@ -2513,7 +2513,7 @@ OutputTable:
 
 Heap:
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 new(v2, 3);
 new(v3, 4);
@@ -2556,7 +2556,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 new(v2, 3);
 new(v3, 4);
@@ -2597,7 +2597,7 @@ OutputTable:
 Heap:
 1 -> 2
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 new(v3, 4);
 createLatch(cnt, *(v2));
@@ -2640,7 +2640,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 new(v3, 4);
 createLatch(cnt, *(v2));
@@ -2681,7 +2681,7 @@ Heap:
 1 -> 2
 2 -> 3
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 createLatch(cnt, *(v2));
 fork
@@ -2724,7 +2724,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 createLatch(cnt, *(v2));
 fork
@@ -2765,7 +2765,7 @@ Heap:
 2 -> 3
 3 -> 4
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 fork
 (
@@ -2807,7 +2807,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 fork
 (
@@ -2847,7 +2847,7 @@ Heap:
 2 -> 3
 3 -> 4
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -2871,7 +2871,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -2893,7 +2893,7 @@ Heap:
 2 -> 3
 3 -> 4
 
-======== ThreadID: 2========
+======== ThreadID: 3========
 ExecutionStack:
 *(v1) = *(v1) * 10;
 print (*(v1));
@@ -2926,7 +2926,7 @@ Heap:
 2 -> 3
 3 -> 4
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -2948,7 +2948,7 @@ Heap:
 2 -> 3
 3 -> 4
 
-======== ThreadID: 2========
+======== ThreadID: 3========
 ExecutionStack:
 print (*(v1));
 countDownLatch(cnt);
@@ -2982,7 +2982,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3004,7 +3004,7 @@ Heap:
 2 -> 3
 3 -> 4
 
-======== ThreadID: 2========
+======== ThreadID: 3========
 ExecutionStack:
 print (*(v1));
 countDownLatch(cnt);
@@ -3036,7 +3036,7 @@ Heap:
 2 -> 3
 3 -> 4
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3059,7 +3059,7 @@ Heap:
 2 -> 3
 3 -> 4
 
-======== ThreadID: 2========
+======== ThreadID: 3========
 ExecutionStack:
 countDownLatch(cnt);
 fork
@@ -3093,7 +3093,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3116,7 +3116,7 @@ Heap:
 2 -> 3
 3 -> 4
 
-======== ThreadID: 2========
+======== ThreadID: 3========
 ExecutionStack:
 countDownLatch(cnt);
 fork
@@ -3148,7 +3148,7 @@ Heap:
 2 -> 3
 3 -> 4
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3165,14 +3165,14 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
 
 Heap:
 1 -> 20
 2 -> 3
 3 -> 4
 
-======== ThreadID: 2========
+======== ThreadID: 3========
 ExecutionStack:
 fork
 (
@@ -3197,7 +3197,7 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
 
 Heap:
 1 -> 20
@@ -3206,7 +3206,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3223,14 +3223,14 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
 
 Heap:
 1 -> 20
 2 -> 3
 3 -> 4
 
-======== ThreadID: 2========
+======== ThreadID: 3========
 ExecutionStack:
 fork
 (
@@ -3255,31 +3255,7 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-
-Heap:
-1 -> 20
-2 -> 3
-3 -> 4
-
-======== ThreadID: 1========
-ExecutionStack:
-awaitLatch(cnt);
-print (100);
-countDownLatch(cnt);
-print (100);
-
-SymbolTable:
-cnt -> 2
-v1 -> (0x1, int)
-v2 -> (0x2, int)
-v3 -> (0x3, int)
-
-FileTable:
-
-OutputTable:
-20
-(latch) 2
+(latch) 3
 
 Heap:
 1 -> 20
@@ -3288,6 +3264,10 @@ Heap:
 
 ======== ThreadID: 2========
 ExecutionStack:
+awaitLatch(cnt);
+print (100);
+countDownLatch(cnt);
+print (100);
 
 SymbolTable:
 cnt -> 2
@@ -3299,7 +3279,27 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
+
+Heap:
+1 -> 20
+2 -> 3
+3 -> 4
+
+======== ThreadID: 3========
+ExecutionStack:
+
+SymbolTable:
+cnt -> 2
+v1 -> (0x1, int)
+v2 -> (0x2, int)
+v3 -> (0x3, int)
+
+FileTable:
+
+OutputTable:
+20
+(latch) 3
 
 Heap:
 1 -> 20
@@ -3308,7 +3308,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3325,14 +3325,14 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
 
 Heap:
 1 -> 20
 2 -> 3
 3 -> 4
 
-======== ThreadID: 3========
+======== ThreadID: 4========
 ExecutionStack:
 *(v2) = *(v2) * 10;
 print (*(v2));
@@ -3354,14 +3354,14 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
 
 Heap:
 1 -> 20
 2 -> 3
 3 -> 4
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3378,14 +3378,14 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 4
 
-======== ThreadID: 3========
+======== ThreadID: 4========
 ExecutionStack:
 print (*(v2));
 countDownLatch(cnt);
@@ -3406,7 +3406,7 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
 
 Heap:
 1 -> 20
@@ -3415,7 +3415,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3432,14 +3432,14 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 4
 
-======== ThreadID: 3========
+======== ThreadID: 4========
 ExecutionStack:
 print (*(v2));
 countDownLatch(cnt);
@@ -3460,14 +3460,14 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 4
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3484,7 +3484,7 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
 30
 
 Heap:
@@ -3492,7 +3492,7 @@ Heap:
 2 -> 30
 3 -> 4
 
-======== ThreadID: 3========
+======== ThreadID: 4========
 ExecutionStack:
 countDownLatch(cnt);
 fork
@@ -3512,7 +3512,7 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
 30
 
 Heap:
@@ -3522,7 +3522,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3539,7 +3539,7 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
 30
 
 Heap:
@@ -3547,7 +3547,7 @@ Heap:
 2 -> 30
 3 -> 4
 
-======== ThreadID: 3========
+======== ThreadID: 4========
 ExecutionStack:
 countDownLatch(cnt);
 fork
@@ -3567,7 +3567,7 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
+(latch) 3
 30
 
 Heap:
@@ -3575,7 +3575,7 @@ Heap:
 2 -> 30
 3 -> 4
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3592,16 +3592,16 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 4
 
-======== ThreadID: 3========
+======== ThreadID: 4========
 ExecutionStack:
 fork
 (
@@ -3620,9 +3620,9 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 
 Heap:
 1 -> 20
@@ -3631,7 +3631,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3648,16 +3648,16 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 4
 
-======== ThreadID: 3========
+======== ThreadID: 4========
 ExecutionStack:
 fork
 (
@@ -3676,16 +3676,16 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 4
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3702,16 +3702,16 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 4
 
-======== ThreadID: 3========
+======== ThreadID: 4========
 ExecutionStack:
 
 SymbolTable:
@@ -3724,9 +3724,9 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 
 Heap:
 1 -> 20
@@ -3735,7 +3735,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3752,16 +3752,16 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 4
 
-======== ThreadID: 4========
+======== ThreadID: 5========
 ExecutionStack:
 *(v3) = *(v3) * 10;
 print (*(v3));
@@ -3777,16 +3777,16 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 4
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3803,16 +3803,16 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 40
 
-======== ThreadID: 4========
+======== ThreadID: 5========
 ExecutionStack:
 print (*(v3));
 countDownLatch(cnt);
@@ -3827,9 +3827,9 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 
 Heap:
 1 -> 20
@@ -3838,7 +3838,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3855,16 +3855,16 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 40
 
-======== ThreadID: 4========
+======== ThreadID: 5========
 ExecutionStack:
 print (*(v3));
 countDownLatch(cnt);
@@ -3879,16 +3879,16 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 40
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3905,9 +3905,9 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 40
 
 Heap:
@@ -3915,7 +3915,7 @@ Heap:
 2 -> 30
 3 -> 40
 
-======== ThreadID: 4========
+======== ThreadID: 5========
 ExecutionStack:
 countDownLatch(cnt);
 
@@ -3929,9 +3929,9 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 40
 
 Heap:
@@ -3941,7 +3941,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -3958,9 +3958,9 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 40
 
 Heap:
@@ -3968,7 +3968,7 @@ Heap:
 2 -> 30
 3 -> 40
 
-======== ThreadID: 4========
+======== ThreadID: 5========
 ExecutionStack:
 countDownLatch(cnt);
 
@@ -3982,9 +3982,9 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
+30
+(latch) 4
 40
 
 Heap:
@@ -3992,7 +3992,7 @@ Heap:
 2 -> 30
 3 -> 40
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -4009,18 +4009,18 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
-40
+30
 (latch) 4
+40
+(latch) 5
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 40
 
-======== ThreadID: 4========
+======== ThreadID: 5========
 ExecutionStack:
 
 SymbolTable:
@@ -4033,11 +4033,11 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
-40
+30
 (latch) 4
+40
+(latch) 5
 
 Heap:
 1 -> 20
@@ -4046,7 +4046,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 awaitLatch(cnt);
 print (100);
@@ -4063,18 +4063,18 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
-40
+30
 (latch) 4
+40
+(latch) 5
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 40
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 print (100);
 countDownLatch(cnt);
@@ -4090,11 +4090,11 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
-40
+30
 (latch) 4
+40
+(latch) 5
 
 Heap:
 1 -> 20
@@ -4103,7 +4103,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 print (100);
 countDownLatch(cnt);
@@ -4119,18 +4119,18 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
-40
+30
 (latch) 4
+40
+(latch) 5
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 40
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 countDownLatch(cnt);
 print (100);
@@ -4145,11 +4145,11 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
-40
+30
 (latch) 4
+40
+(latch) 5
 100
 
 Heap:
@@ -4159,7 +4159,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 countDownLatch(cnt);
 print (100);
@@ -4174,11 +4174,11 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
-40
+30
 (latch) 4
+40
+(latch) 5
 100
 
 Heap:
@@ -4186,7 +4186,7 @@ Heap:
 2 -> 30
 3 -> 40
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 print (100);
 
@@ -4200,13 +4200,13 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
-40
+30
 (latch) 4
+40
+(latch) 5
 100
-(latch) 1
+(latch) 2
 
 Heap:
 1 -> 20
@@ -4215,7 +4215,7 @@ Heap:
 
 ======== New step ========
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 print (100);
 
@@ -4229,20 +4229,20 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
-40
+30
 (latch) 4
+40
+(latch) 5
 100
-(latch) 1
+(latch) 2
 
 Heap:
 1 -> 20
 2 -> 30
 3 -> 40
 
-======== ThreadID: 1========
+======== ThreadID: 2========
 ExecutionStack:
 
 SymbolTable:
@@ -4255,13 +4255,13 @@ FileTable:
 
 OutputTable:
 20
-(latch) 2
-30
 (latch) 3
-40
+30
 (latch) 4
+40
+(latch) 5
 100
-(latch) 1
+(latch) 2
 100
 
 Heap:

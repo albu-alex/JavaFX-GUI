@@ -7,6 +7,7 @@ import model.expression.Expression;
 import model.type.Type;
 
 public class ConditionalAssignmentStatement implements Statement {
+    //1 a)
     private final String variableName;
     private final Expression conditionalExpression;
     private final Expression trueBranchExpression;
@@ -21,23 +22,30 @@ public class ConditionalAssignmentStatement implements Statement {
 
     @Override
     public ProgramState execute(ProgramState crtState) throws Exception {
+        //get execution stack, pop the statement
         StackInterface<Statement> stack = crtState.getExecutionStack();
-        stack.push(new IfStatement(this.conditionalExpression,
-                new AssignmentStatement(this.variableName, this.trueBranchExpression),
-                new AssignmentStatement(this.variableName, this.falseBranchExpression)));
+        //create the If statement
+        stack.push(new IfStatement(conditionalExpression,
+                //condition
+                new AssignmentStatement(variableName, trueBranchExpression),
+                //if branch
+                new AssignmentStatement(variableName, falseBranchExpression)));
+                //else branch
         return null;
     }
 
     @Override
     public String toString() {
         String representation = "";
-        representation += (this.variableName + " = " + this.conditionalExpression.toString() + " ? " + this.trueBranchExpression.toString() + " : " + this.falseBranchExpression.toString());
+        representation += (variableName + " = " + conditionalExpression.toString() + " ? " + trueBranchExpression.toString()
+                + " : " + falseBranchExpression.toString());
         return representation;
     }
 
     @Override
     public DictionaryInterface<String, Type> getTypeEnvironment(
             DictionaryInterface<String, Type> initialTypeEnvironment) throws Exception {
+        //no type checking is required
         return initialTypeEnvironment;
     }
 }

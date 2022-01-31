@@ -288,6 +288,7 @@ public class AllExamples {
 		statementList.addLast(new HeapAllocationStatement("b", new ValueExpression(new IntValue(0))));
 		statementList.addLast(new HeapWritingStatement("a", new ValueExpression(new IntValue(1))));
 		statementList.addLast(new HeapWritingStatement("b", new ValueExpression(new IntValue(2))));
+		//v=(rh(a)<rh(b))?100:200
 		statementList.addLast(new ConditionalAssignmentStatement("v",
 				new RelationalExpression(
 						new HeapReadingExpression(new VariableExpression("a")),
@@ -295,7 +296,9 @@ public class AllExamples {
 						"<"),
 				new ValueExpression(new IntValue(100)),
 				new ValueExpression(new IntValue(200))));
+		//100
 		statementList.addLast(new PrintStatement(new VariableExpression("v")));
+		//v=(rh(b)-2 > rh(a))?100:200
 		statementList.addLast(new ConditionalAssignmentStatement("v",
 				new RelationalExpression(
 						new ArithmeticExpression(
@@ -306,6 +309,7 @@ public class AllExamples {
 						">"),
 				new ValueExpression(new IntValue(100)),
 				new ValueExpression(new IntValue(200))));
+		//200
 		statementList.addLast(new PrintStatement(new VariableExpression("v")));
 
 		return new Example(this.composeStatement(statementList), "conditional assignment", this.SRC_FOLDER_PATH + "\\log13.in");
@@ -411,10 +415,7 @@ public class AllExamples {
 		statementList.addLast(new CountDownLatchStatement("cnt"));
 		statementList.addLast(new PrintStatement(new ValueExpression(new IntValue(100))));
 
-		return new Example(this.composeStatement(statementList), "Ref int v1; Ref int v2; Ref int v3; int cnt; " +
-				"new(v1,2); new(v2,3); new(v3,4); newLatch(cnt,rH(v2)); fork(wh(v1,rh(v1)*10); print(rh(v1)); countDown(cnt);); " +
-				"fork(wh(v2,rh(v2)*10); print(rh(v2)); countDown(cnt);); fork(wh(v3,rh(v3)*10); print(rh(v3)); countDown(cnt);); " +
-				"await(cnt); print(100); countDown(cnt); print(100);", this.SRC_FOLDER_PATH + "\\log16.in");
+		return new Example(this.composeStatement(statementList), "countDownLatch", this.SRC_FOLDER_PATH + "\\log16.in");
 	}
 	public Example getExample17(){
 		MyList<Statement> statementList = new MyList<>();
@@ -576,29 +577,11 @@ public class AllExamples {
 	
 	public MyList<Example> getAllExamples() {
 		MyList<Example> exampleList = new MyList<>();
-		
-		exampleList.addLast(getExample1());
-		exampleList.addLast(getExample2());
-		exampleList.addLast(getExample3());
-		exampleList.addLast(getExample4());
-		exampleList.addLast(getExample5());
-		exampleList.addLast(getExample6());
-		exampleList.addLast(getExample7());
-		exampleList.addLast(getExample8());
-		exampleList.addLast(getExample9());
-		exampleList.addLast(getExample10());
-		exampleList.addLast(getExample11());
-		exampleList.addLast(getExample12());
+
+		//1) b
 		exampleList.addLast(getExample13());
-		exampleList.addLast(getExample14());
-		exampleList.addLast(getExample15());
+		//2) g
 		exampleList.addLast(getExample16());
-		exampleList.addLast(getExample17());
-		exampleList.addLast(getExample18());
-		exampleList.addLast(getExample19());
-		exampleList.addLast(getExample20());
-		exampleList.addLast(getExample21());
-		exampleList.addLast(getExample22());
 
 		return exampleList;
 	}
